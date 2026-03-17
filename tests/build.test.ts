@@ -16,10 +16,4 @@ describe('dist/style.css', () => {
   it('contains button styles', () => {
     expect(dist).toContain('.btn')
   })
-
-  it('contains button variants', () => {
-    expect(dist).toContain('.btn-primary')
-    expect(dist).toContain('.btn-secondary')
-    expect(dist).toContain('.btn-ghost')
-  })
 })

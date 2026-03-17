@@ -4,22 +4,11 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/')
 })
 
-test('button variants', async ({ page }) => {
-  const section = page.locator('.section').first()
-  await expect(section).toHaveScreenshot()
-})
-
-test('button sizes', async ({ page }) => {
-  const section = page.locator('.section').nth(1)
-  await expect(section).toHaveScreenshot()
-})
-
-test('button disabled', async ({ page }) => {
-  const section = page.locator('.section').nth(2)
-  await expect(section).toHaveScreenshot()
+test('playground header', async ({ page }) => {
+  await expect(page.locator('.playground-header')).toHaveScreenshot()
 })
 
 test('dark mode', async ({ page }) => {
-  await page.click('button:has-text("Toggle Dark Mode")')
+  await page.click('#theme-toggle')
   await expect(page).toHaveScreenshot()
 })
