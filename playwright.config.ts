@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
 
+const PORT = process.env.PORT ?? '5173'
+const BASE_URL = `http://localhost:${PORT}`
+
 export default defineConfig({
   testDir: './tests/visual',
   snapshotDir: './tests/visual/snapshots',
@@ -13,11 +16,11 @@ export default defineConfig({
     },
   },
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: BASE_URL,
   },
   webServer: {
     command: 'pnpm dev',
-    url: 'http://localhost:5173',
+    url: BASE_URL,
     reuseExistingServer: !process.env.CI,
   },
   projects: [

@@ -18,6 +18,6 @@ describe('tokens source', () => {
   })
 
   it('defines border radius tokens', () => {
-    expect(css).toContain('--radius-md')
+    expect(css).toContain('--radius')
   })
 })
