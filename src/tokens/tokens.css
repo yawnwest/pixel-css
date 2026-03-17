@@ -1,0 +1,79 @@
+@import '@fontsource/press-start-2p/latin.css';
+
+:root {
+  /* Colors */
+  --color-primary: #5b4cf5;
+  --color-primary-hover: #4a3dd4;
+  --color-secondary: #f5f4ff;
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b6b80;
+  --color-bg: #ffffff;
+  --color-border: #e2e2ee;
+  --color-error: #e74c3c;
+  --color-success: #2ecc71;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', monospace;
+  --text-sm: 0.75rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+
+  /* Borders */
+  --radius: 0px;
+  --border-width: 2px;
+
+  /* Shadows – hard pixel drop shadows, no blur */
+  --shadow-sm: 2px 2px 0px var(--color-border);
+  --shadow-md: 4px 4px 0px var(--color-border);
+
+  /* Transitions */
+  --duration-fast: 0ms;
+  --duration-base: 50ms;
+  --ease-default: steps(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-primary: #7c6ff7;
+    --color-primary-hover: #9389f9;
+    --color-secondary: #1e1b3a;
+    --color-text: #f0efff;
+    --color-text-muted: #9b9ab0;
+    --color-bg: #0f0e1a;
+    --color-border: #2e2b4a;
+  }
+}
+
+[data-theme='dark'] {
+  --color-primary: #7c6ff7;
+  --color-primary-hover: #9389f9;
+  --color-secondary: #1e1b3a;
+  --color-text: #f0efff;
+  --color-text-muted: #9b9ab0;
+  --color-bg: #0f0e1a;
+  --color-border: #2e2b4a;
+}
+
+[data-theme='light'] {
+  --color-primary: #5b4cf5;
+  --color-primary-hover: #4a3dd4;
+  --color-secondary: #f5f4ff;
+  --color-text: #1a1a2e;
+  --color-text-muted: #6b6b80;
+  --color-bg: #ffffff;
+  --color-border: #e2e2ee;
+}
