@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  image-rendering: pixelated;
 }
 
 html {
@@ -11,17 +12,26 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-pixel), monospace;
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.5;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  cursor: crosshair;
 }
 
 img,
+canvas,
 video,
 svg {
   display: block;
   max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  image-rendering: -moz-crisp-edges;
 }
 
 button,
@@ -29,4 +39,19 @@ input,
 select,
 textarea {
   font: inherit;
+  line-height: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
