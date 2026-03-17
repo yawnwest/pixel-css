@@ -7,8 +7,6 @@
     "url": "https://github.com/yawnwest/pixel-css"
   },
   "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "exports": {
     ".": {
       "import": "./dist/index.js",
