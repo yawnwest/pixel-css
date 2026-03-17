@@ -4,4 +4,7 @@
 
 ### Added
 
-- Initial release
+- Initialized repo
+- Setup CI
+- Some basic styling
+- A sample playground
