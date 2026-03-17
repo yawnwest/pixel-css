@@ -1,3 +1,65 @@
 # pixel-css
 
-This is a CSS learning project for pixel-art like websites.
+A CSS library with a pixel-art aesthetic. Provides design tokens, resets, and component styles with retro 8-bit vibes — hard shadows, zero border radius, pixelated rendering, and the Press Start 2P font.
+
+## Installation
+
+```bash
+npm install @yawnwest/pixel-css
+```
+
+## Usage
+
+Import the stylesheet once in your project:
+
+```js
+import '@yawnwest/pixel-css/style.css'
+```
+
+Or load it directly via CDN — no build step required:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@yawnwest/pixel-css/dist/style.css" />
+```
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yawnwest/pixel-css/dist/style.css" />
+```
+
+## Features
+
+- **Design tokens** — colors, spacing, and typography scales via CSS custom properties
+- **CSS reset** — opinionated base with pixelated image rendering and crosshair cursor
+- **Typography** — headings, paragraphs, links, and code using Press Start 2P
+- **Dark mode** — automatic via `prefers-color-scheme`, or manual via `data-theme="dark"` / `data-theme="light"`
+- **Size-constrained** — CSS bundle capped at 30 KB
+
+## Dark mode
+
+Dark mode activates automatically based on the user's system preference. You can also control it manually:
+
+```html
+<html data-theme="dark">
+  …
+</html>
+<html data-theme="light">
+  …
+</html>
+```
+
+## Development
+
+```bash
+pnpm install
+pnpm dev          # Start playground at http://localhost:5173
+pnpm build        # Build the library
+pnpm test         # Run unit tests
+pnpm test:visual  # Run visual regression tests
+pnpm lint         # Lint
+pnpm format       # Format
+pnpm size         # Check bundle size
+```
+
+## License
+
+MIT © Yawn West
