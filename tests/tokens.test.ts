@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'fs'
 import { resolve } from 'path'
 
-const css = readFileSync(resolve(__dirname, '../src/tokens/tokens.css'), 'utf-8')
+const css = readFileSync(resolve(__dirname, '../src/index.css'), 'utf-8')
 
 describe('tokens source', () => {
   it('defines --color-primary', () => {

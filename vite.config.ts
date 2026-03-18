@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ mode }) => ({
+  plugins: [tailwindcss()],
   root: mode === 'playground' ? 'playground' : undefined,
   base: mode === 'playground' ? '/pixel-css/' : '/',
   server: {
