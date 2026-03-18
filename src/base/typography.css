@@ -4,11 +4,12 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  line-height: 1.6;
   font-weight: 600;
   color: var(--color-text);
   text-wrap: balance;
   letter-spacing: 0.05em;
+  margin-block: var(--space-6) var(--space-4);
 }
 
 h1 {

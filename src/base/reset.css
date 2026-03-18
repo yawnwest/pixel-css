@@ -19,6 +19,7 @@ body {
   overflow-wrap: break-word;
   -webkit-font-smoothing: none;
   font-smooth: never;
+  padding-inline: var(--space-6);
 }
 
 img,
