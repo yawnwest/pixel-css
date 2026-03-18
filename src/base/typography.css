@@ -40,24 +40,37 @@ small {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
 a:hover {
-  color: var(--color-primary-hover);
+  color: var(--color-primary);
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
+.text-muted {
+  color: var(--color-text-muted);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-success {
+  color: var(--color-success);
+}
+.text-error {
+  color: var(--color-error);
+}
+
 code {
-  font-family: var(--font-mono);
+  font-family: var(--font-pixel);
   font-size: 0.9em;
-  background: var(--color-secondary);
+  background: var(--color-cards);
   padding: 0.1em 0.3em;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   word-break: break-all;
 }
