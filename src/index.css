@@ -99,7 +99,7 @@
   a,
   [role='button'] {
     cursor:
-      url('./cursors/default.png') 0 0,
+      url('./cursors/default.png') 1 1,
       default;
   }
 
@@ -107,14 +107,14 @@
   a,
   [role='button'] {
     cursor:
-      url('./cursors/pointer.png') 4 0,
+      url('./cursors/pointer.png') 5 0,
       pointer;
   }
 
   :disabled,
   [aria-disabled='true'] {
     cursor:
-      url('./cursors/not-allowed.png') 12 12,
+      url('./cursors/not-allowed.png') 3 4,
       not-allowed;
   }
 
@@ -133,9 +133,18 @@
   input[type='password'],
   input[type='search'],
   textarea,
+  small,
+  .text-xs,
+  .text-sm,
+  .text-base,
+  .text-lg,
+  .text-xl,
+  .text-2xl,
+  .text-3xl,
+  .text-4xl,
   [contenteditable] {
     cursor:
-      url('./cursors/text.png') 2 6,
+      url('./cursors/text.png') 5 8,
       text;
   }
 
@@ -160,6 +169,7 @@
   h4,
   h5,
   h6 {
+    font-weight: bold;
     line-height: var(--leading-normal);
     color: var(--color-foreground);
     margin-block: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
