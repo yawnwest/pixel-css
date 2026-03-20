@@ -13,12 +13,7 @@
         <h1 class="text-2xl my-0">Pixel CSS</h1>
         <p class="text-muted-foreground text-xs mt-2">Design System Playground</p>
       </div>
-      <button
-        id="theme-toggle"
-        class="px-4 py-2 border-2 border-border bg-card text-card-foreground shadow-sm"
-      >
-        Toggle Dark Mode
-      </button>
+      <button id="theme-toggle" class="btn">Toggle Dark Mode</button>
     </header>
 
     <main class="flex flex-col gap-16">
@@ -170,33 +165,26 @@
       <!-- Buttons -->
       <section>
         <h2 class="text-xl mt-0 mb-6 pb-2 border-b-2 border-border">Buttons</h2>
-        <div class="flex flex-wrap gap-4">
-          <button
-            class="px-4 py-3 bg-primary text-primary-foreground border-2 border-border shadow-sm"
-          >
-            Primary
-          </button>
-          <button
-            class="px-4 py-3 bg-accent text-accent-foreground border-2 border-border shadow-sm"
-          >
-            Accent
-          </button>
-          <button class="px-4 py-3 bg-card text-card-foreground border-2 border-border shadow-sm">
-            Default
-          </button>
-          <button
-            class="px-4 py-3 bg-destructive text-destructive-foreground border-2 border-border shadow-sm"
-          >
-            Destructive
-          </button>
-          <button
-            class="px-4 py-3 bg-success text-success-foreground border-2 border-border shadow-sm"
-          >
-            Success
-          </button>
-          <button class="px-4 py-3 bg-card text-muted-foreground border-2 border-border" disabled>
-            Disabled
-          </button>
+        <div class="flex flex-col gap-6">
+          <div>
+            <p class="text-xs text-muted-foreground mb-3">Variants</p>
+            <div class="flex flex-wrap gap-4">
+              <button class="btn">Default</button>
+              <button class="btn btn-primary">Primary</button>
+              <button class="btn btn-accent">Accent</button>
+              <button class="btn btn-success">Success</button>
+              <button class="btn btn-destructive">Destructive</button>
+              <button class="btn" disabled>Disabled</button>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs text-muted-foreground mb-3">Sizes</p>
+            <div class="flex flex-wrap items-center gap-4">
+              <button class="btn btn-primary btn-sm">Small</button>
+              <button class="btn btn-primary">Default</button>
+              <button class="btn btn-primary btn-lg">Large</button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -210,11 +198,7 @@
           <div class="p-6 bg-card border-2 border-border shadow-md flex flex-col gap-4">
             <h3 class="text-lg my-0">Plain Card</h3>
             <p class="text-muted-foreground text-sm">A simple card with border and hard shadow.</p>
-            <button
-              class="px-3 py-2 bg-primary text-primary-foreground border-2 border-border text-xs"
-            >
-              Action
-            </button>
+            <button class="btn btn-primary btn-sm">Action</button>
           </div>
 
           <div class="p-6 bg-card border-2 border-border shadow-md flex flex-col gap-4">
@@ -239,9 +223,7 @@
           <div class="p-6 bg-primary border-2 border-border shadow-md flex flex-col gap-4">
             <h3 class="text-lg my-0 text-primary-foreground">Featured</h3>
             <p class="text-primary-foreground text-sm">A card with primary background color.</p>
-            <button class="px-3 py-2 bg-card text-card-foreground border-2 border-border text-xs">
-              Learn More
-            </button>
+            <button class="btn btn-sm">Learn More</button>
           </div>
 
           <div class="p-6 bg-destructive border-2 border-border shadow-md flex flex-col gap-4">
@@ -249,9 +231,7 @@
             <p class="text-destructive-foreground text-sm">
               This action cannot be undone. Proceed with caution.
             </p>
-            <button class="px-3 py-2 bg-card text-destructive border-2 border-border text-xs">
-              Confirm Delete
-            </button>
+            <button class="btn btn-destructive btn-sm">Confirm Delete</button>
           </div>
         </div>
       </section>

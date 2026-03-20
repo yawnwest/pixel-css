@@ -25,7 +25,8 @@ export default defineConfig(({ mode }) => ({
       cssCodeSplit: false,
       rollupOptions: {
         output: {
-          assetFileNames: () => 'style.css',
+          assetFileNames: (info) =>
+            info.names?.[0]?.endsWith('.css') ? 'style.css' : 'cursors/[name][extname]',
         },
       },
     }),
