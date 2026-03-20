@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('playground header', async ({ page }) => {
-  await expect(page.locator('.playground-header')).toHaveScreenshot()
+  await expect(page.locator('header')).toHaveScreenshot()
 })
 
 test('dark mode', async ({ page }) => {

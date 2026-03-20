@@ -14,7 +14,7 @@ describe('tokens source', () => {
   })
 
   it('defines spacing tokens', () => {
-    expect(css).toContain('--space-4')
+    expect(css).toContain('--spacing')
   })
 
   it('defines border radius tokens', () => {
