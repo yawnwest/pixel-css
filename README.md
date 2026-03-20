@@ -70,16 +70,6 @@ Font sizes use the Press Start 2P pixel font:
 | `text-3xl`  | 40px |
 | `text-4xl`  | 48px |
 
-## Shadows
-
-Hard pixel drop shadows with no blur:
-
-| Class       | Value                |
-| ----------- | -------------------- |
-| `shadow-sm` | `4px 4px 0px #000`   |
-| `shadow-md` | `8px 8px 0px #000`   |
-| `shadow-lg` | `12px 12px 0px #000` |
-
 ## Dark mode
 
 Dark mode activates automatically based on the user's system preference. You can also control it manually:

@@ -48,11 +48,6 @@
   --radius-md: 0px;
   --radius-lg: 0px;
 
-  /* Shadows */
-  --shadow-sm: 4px 4px 0px #000000;
-  --shadow-md: 8px 8px 0px #000000;
-  --shadow-lg: 12px 12px 0px #000000;
-
   /* Transitions */
   --duration-*: initial;
   --duration-base: 50ms;
