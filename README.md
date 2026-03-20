@@ -41,17 +41,17 @@ This gives you Tailwind's preflight reset, all Tailwind utility classes, and the
 
 The theme exposes a semantic color palette as Tailwind-compatible utilities:
 
-| Token | Utility | Purpose |
-|---|---|---|
-| `--color-background` | `bg-background` | Page background |
-| `--color-foreground` | `text-foreground` | Default text |
-| `--color-primary` | `bg-primary` | Main accent, CTAs |
-| `--color-accent` | `bg-accent` | Links, highlights |
-| `--color-card` | `bg-card` | Card and panel background |
-| `--color-muted-foreground` | `text-muted-foreground` | Secondary text |
-| `--color-border` | `border-border` | Borders and dividers |
-| `--color-success` | `bg-success` | Success states |
-| `--color-destructive` | `bg-destructive` | Errors, dangerous actions |
+| Token                      | Utility                 | Purpose                   |
+| -------------------------- | ----------------------- | ------------------------- |
+| `--color-background`       | `bg-background`         | Page background           |
+| `--color-foreground`       | `text-foreground`       | Default text              |
+| `--color-primary`          | `bg-primary`            | Main accent, CTAs         |
+| `--color-accent`           | `bg-accent`             | Links, highlights         |
+| `--color-card`             | `bg-card`               | Card and panel background |
+| `--color-muted-foreground` | `text-muted-foreground` | Secondary text            |
+| `--color-border`           | `border-border`         | Borders and dividers      |
+| `--color-success`          | `bg-success`            | Success states            |
+| `--color-destructive`      | `bg-destructive`        | Errors, dangerous actions |
 
 Each color has a paired `-foreground` token for legible text on that background (e.g. `text-primary-foreground` on `bg-primary`).
 
@@ -59,25 +59,25 @@ Each color has a paired `-foreground` token for legible text on that background 
 
 Font sizes use the Press Start 2P pixel font:
 
-| Class | Size |
-|---|---|
-| `text-xs` | 8px |
-| `text-sm` | 12px |
+| Class       | Size |
+| ----------- | ---- |
+| `text-xs`   | 8px  |
+| `text-sm`   | 12px |
 | `text-base` | 16px |
-| `text-lg` | 20px |
-| `text-xl` | 24px |
-| `text-2xl` | 32px |
-| `text-3xl` | 40px |
-| `text-4xl` | 48px |
+| `text-lg`   | 20px |
+| `text-xl`   | 24px |
+| `text-2xl`  | 32px |
+| `text-3xl`  | 40px |
+| `text-4xl`  | 48px |
 
 ## Shadows
 
 Hard pixel drop shadows with no blur:
 
-| Class | Value |
-|---|---|
-| `shadow-sm` | `4px 4px 0px #000` |
-| `shadow-md` | `8px 8px 0px #000` |
+| Class       | Value                |
+| ----------- | -------------------- |
+| `shadow-sm` | `4px 4px 0px #000`   |
+| `shadow-md` | `8px 8px 0px #000`   |
 | `shadow-lg` | `12px 12px 0px #000` |
 
 ## Dark mode
