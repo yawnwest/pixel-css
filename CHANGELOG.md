@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Added
+
+- Tailwind
+
+### Changed
+
+- Refactored all existing CSS rules
+
 ## [0.3.0] - 2026-03-17
 
 ### Added

@@ -1,6 +1,6 @@
 # pixel-css
 
-A CSS library with a pixel-art aesthetic. Provides design tokens, resets, and component styles with retro 8-bit vibes — hard shadows, zero border radius, pixelated rendering, and the Press Start 2P font.
+A CSS library with a pixel-art aesthetic based on Tailwind.
 
 ## Installation
 
