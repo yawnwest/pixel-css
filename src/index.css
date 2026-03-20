@@ -1,0 +1,188 @@
+@import 'tailwindcss/preflight' layer(base);
+@import 'tailwindcss/utilities' layer(utilities);
+@import '@fontsource/press-start-2p/latin.css';
+
+@theme {
+  /* Colors */
+  --color-*: initial;
+  --color-background: #f5f0e8; /* page background */
+  --color-foreground: #1e1e3a; /* default text */
+  --color-muted-foreground: #7a7a8c; /* secondary text, placeholders */
+  --color-primary: #6b3fa0; /* main accent, CTAs */
+  --color-primary-foreground: #fffdf7; /* text on primary background */
+  --color-accent: #0d9e8a; /* links, highlights */
+  --color-accent-foreground: #fffdf7; /* text on accent background */
+  --color-card: #fffdf7; /* card and panel background */
+  --color-card-foreground: #1e1e3a; /* text on card background */
+  --color-border: #000000; /* borders and dividers */
+  --color-ring: #6b3fa0; /* focus rings */
+  --color-success: #2e8b57; /* success messages */
+  --color-success-foreground: #fffdf7; /* text on success background */
+  --color-destructive: #c0392b; /* errors, dangerous actions */
+  --color-destructive-foreground: #fffdf7; /* text on destructive background */
+
+  /* Typography */
+  --font-*: initial;
+  --font-pixel: 'Press Start 2P', monospace;
+  --text-*: initial;
+  --text-xs: 0.5rem; /* 8px */
+  --text-sm: 0.75rem; /* 12px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.5rem; /* 24px */
+  --text-2xl: 2rem; /* 32px */
+  --text-3xl: 2.5rem; /* 40px */
+  --text-4xl: 3rem; /* 48px */
+  --leading-tight: 1.4;
+  --leading-normal: 1.6;
+  --leading-loose: 2;
+  --tracking-normal: 0.05em;
+  --tracking-wide: 0.1em;
+
+  /* Spacing */
+  --spacing: 0.25rem;
+
+  /* Borders */
+  --radius-*: initial;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  /* Shadows */
+  --shadow-sm: 4px 4px 0px #000000;
+  --shadow-md: 8px 8px 0px #000000;
+  --shadow-lg: 12px 12px 0px #000000;
+
+  /* Transitions */
+  --duration-*: initial;
+  --duration-base: 50ms;
+  --duration-slow: 150ms;
+  --ease-pixel: steps(4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-background: #1a1c2c;
+    --color-foreground: #f5e6c8;
+    --color-muted-foreground: #8888aa;
+    --color-primary: #7b5ea7;
+    --color-primary-foreground: #f5e6c8;
+    --color-accent: #41ead4;
+    --color-accent-foreground: #1a1c2c;
+    --color-card: #29293d;
+    --color-card-foreground: #f5e6c8;
+    --color-border: #000000;
+    --color-ring: #7b5ea7;
+    --color-success: #7ec8a0;
+    --color-success-foreground: #1a1c2c;
+    --color-destructive: #e94560;
+    --color-destructive-foreground: #f5e6c8;
+  }
+}
+
+[data-theme='dark'] {
+  --color-background: #1a1c2c;
+  --color-foreground: #f5e6c8;
+  --color-muted-foreground: #8888aa;
+  --color-primary: #7b5ea7;
+  --color-primary-foreground: #f5e6c8;
+  --color-accent: #41ead4;
+  --color-accent-foreground: #1a1c2c;
+  --color-card: #29293d;
+  --color-card-foreground: #f5e6c8;
+  --color-border: #000000;
+  --color-ring: #7b5ea7;
+  --color-success: #7ec8a0;
+  --color-success-foreground: #1a1c2c;
+  --color-destructive: #e94560;
+  --color-destructive-foreground: #f5e6c8;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-pixel);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: none;
+    font-smooth: never;
+    overflow-wrap: break-word;
+    padding-inline: calc(var(--spacing) * 6);
+  }
+
+  * {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: var(--leading-normal);
+    color: var(--color-foreground);
+    margin-block: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+  }
+  h2 {
+    font-size: var(--text-3xl);
+  }
+  h3 {
+    font-size: var(--text-2xl);
+  }
+  h4 {
+    font-size: var(--text-xl);
+  }
+  h5 {
+    font-size: var(--text-lg);
+  }
+  h6 {
+    font-size: var(--text-base);
+  }
+
+  p {
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--color-primary);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  code {
+    font-family: var(--font-pixel);
+    font-size: 0.9em;
+    background-color: var(--color-card);
+    color: var(--color-card-foreground);
+    padding: 0.1em 0.3em;
+  }
+
+  small {
+    font-size: var(--text-sm);
+    color: var(--color-muted-foreground);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

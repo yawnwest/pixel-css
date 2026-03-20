@@ -12,8 +12,4 @@ describe('dist/style.css', () => {
   it('contains dark mode tokens', () => {
     expect(dist).toContain('prefers-color-scheme:dark')
   })
-
-  it('contains button styles', () => {
-    expect(dist).toContain('.btn')
-  })
 })

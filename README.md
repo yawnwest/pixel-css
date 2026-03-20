@@ -1,6 +1,6 @@
 # pixel-css
 
-A CSS library with a pixel-art aesthetic. Provides design tokens, resets, and component styles with retro 8-bit vibes — hard shadows, zero border radius, pixelated rendering, and the Press Start 2P font.
+A CSS library with a pixel-art aesthetic built on Tailwind CSS v4. Provides a complete pixel-art design system — hard shadows, zero border radius, pixelated rendering, and the Press Start 2P font — with all Tailwind utilities available out of the box.
 
 ## Installation
 
@@ -26,13 +26,59 @@ Or load it directly via CDN — no build step required:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yawnwest/pixel-css/dist/style.css" />
 ```
 
+This gives you Tailwind's preflight reset, all Tailwind utility classes, and the pixel-art theme tokens.
+
 ## Features
 
-- **Design tokens** — colors, spacing, and typography scales via CSS custom properties
-- **CSS reset** — opinionated base with pixelated image rendering and crosshair cursor
+- **Tailwind utilities** — full set of Tailwind CSS v4 utility classes included
+- **Design tokens** — semantic color palette, typography scale, spacing, shadows, and transitions via `@theme`
+- **CSS reset** — Tailwind preflight with pixelated image rendering
 - **Typography** — headings, paragraphs, links, and code using Press Start 2P
 - **Dark mode** — automatic via `prefers-color-scheme`, or manual via `data-theme="dark"` / `data-theme="light"`
-- **Size-constrained** — CSS bundle capped at 30 KB
+- **Size-constrained** — CSS bundle capped at 35 KB
+
+## Colors
+
+The theme exposes a semantic color palette as Tailwind-compatible utilities:
+
+| Token                      | Utility                 | Purpose                   |
+| -------------------------- | ----------------------- | ------------------------- |
+| `--color-background`       | `bg-background`         | Page background           |
+| `--color-foreground`       | `text-foreground`       | Default text              |
+| `--color-primary`          | `bg-primary`            | Main accent, CTAs         |
+| `--color-accent`           | `bg-accent`             | Links, highlights         |
+| `--color-card`             | `bg-card`               | Card and panel background |
+| `--color-muted-foreground` | `text-muted-foreground` | Secondary text            |
+| `--color-border`           | `border-border`         | Borders and dividers      |
+| `--color-success`          | `bg-success`            | Success states            |
+| `--color-destructive`      | `bg-destructive`        | Errors, dangerous actions |
+
+Each color has a paired `-foreground` token for legible text on that background (e.g. `text-primary-foreground` on `bg-primary`).
+
+## Typography
+
+Font sizes use the Press Start 2P pixel font:
+
+| Class       | Size |
+| ----------- | ---- |
+| `text-xs`   | 8px  |
+| `text-sm`   | 12px |
+| `text-base` | 16px |
+| `text-lg`   | 20px |
+| `text-xl`   | 24px |
+| `text-2xl`  | 32px |
+| `text-3xl`  | 40px |
+| `text-4xl`  | 48px |
+
+## Shadows
+
+Hard pixel drop shadows with no blur:
+
+| Class       | Value                |
+| ----------- | -------------------- |
+| `shadow-sm` | `4px 4px 0px #000`   |
+| `shadow-md` | `8px 8px 0px #000`   |
+| `shadow-lg` | `12px 12px 0px #000` |
 
 ## Dark mode
 
