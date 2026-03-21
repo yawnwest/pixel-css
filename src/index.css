@@ -50,6 +50,7 @@
   --radius-md: 0px;
   --radius-lg: 0px;
   --pixel-corner: 3px;
+  --pixel-step: 4px;
 
   /* Button */
   --btn-highlight: rgba(255, 255, 255, 0.3);
@@ -438,5 +439,129 @@
 
   .panel-details[open] > summary::after {
     content: '▲';
+  }
+
+  /* 1 step per corner */
+  .pixel-rounded-sm {
+    --_s: var(--pixel-step);
+    clip-path: polygon(
+      var(--_s) 0%,
+      calc(100% - var(--_s)) 0%,
+      calc(100% - var(--_s)) var(--_s),
+      100% var(--_s),
+      100% calc(100% - var(--_s)),
+      calc(100% - var(--_s)) calc(100% - var(--_s)),
+      calc(100% - var(--_s)) 100%,
+      var(--_s) 100%,
+      var(--_s) calc(100% - var(--_s)),
+      0% calc(100% - var(--_s)),
+      0% var(--_s),
+      var(--_s) var(--_s)
+    );
+  }
+
+  /* 2 steps per corner */
+  .pixel-rounded {
+    --_s: var(--pixel-step);
+    clip-path: polygon(
+      calc(var(--_s) * 2) 0%,
+      calc(100% - var(--_s) * 2) 0%,
+      calc(100% - var(--_s) * 2) var(--_s),
+      calc(100% - var(--_s)) var(--_s),
+      calc(100% - var(--_s)) calc(var(--_s) * 2),
+      100% calc(var(--_s) * 2),
+      100% calc(100% - var(--_s) * 2),
+      calc(100% - var(--_s)) calc(100% - var(--_s) * 2),
+      calc(100% - var(--_s)) calc(100% - var(--_s)),
+      calc(100% - var(--_s) * 2) calc(100% - var(--_s)),
+      calc(100% - var(--_s) * 2) 100%,
+      calc(var(--_s) * 2) 100%,
+      calc(var(--_s) * 2) calc(100% - var(--_s)),
+      var(--_s) calc(100% - var(--_s)),
+      var(--_s) calc(100% - var(--_s) * 2),
+      0% calc(100% - var(--_s) * 2),
+      0% calc(var(--_s) * 2),
+      var(--_s) calc(var(--_s) * 2),
+      var(--_s) var(--_s),
+      calc(var(--_s) * 2) var(--_s)
+    );
+  }
+
+  /* 3 steps per corner */
+  .pixel-rounded-lg {
+    --_s: var(--pixel-step);
+    clip-path: polygon(
+      calc(var(--_s) * 3) 0%,
+      calc(100% - var(--_s) * 3) 0%,
+      calc(100% - var(--_s) * 3) var(--_s),
+      calc(100% - var(--_s) * 2) var(--_s),
+      calc(100% - var(--_s) * 2) calc(var(--_s) * 2),
+      calc(100% - var(--_s)) calc(var(--_s) * 2),
+      calc(100% - var(--_s)) calc(var(--_s) * 3),
+      100% calc(var(--_s) * 3),
+      100% calc(100% - var(--_s) * 3),
+      calc(100% - var(--_s)) calc(100% - var(--_s) * 3),
+      calc(100% - var(--_s)) calc(100% - var(--_s) * 2),
+      calc(100% - var(--_s) * 2) calc(100% - var(--_s) * 2),
+      calc(100% - var(--_s) * 2) calc(100% - var(--_s)),
+      calc(100% - var(--_s) * 3) calc(100% - var(--_s)),
+      calc(100% - var(--_s) * 3) 100%,
+      calc(var(--_s) * 3) 100%,
+      calc(var(--_s) * 3) calc(100% - var(--_s)),
+      calc(var(--_s) * 2) calc(100% - var(--_s)),
+      calc(var(--_s) * 2) calc(100% - var(--_s) * 2),
+      var(--_s) calc(100% - var(--_s) * 2),
+      var(--_s) calc(100% - var(--_s) * 3),
+      0% calc(100% - var(--_s) * 3),
+      0% calc(var(--_s) * 3),
+      var(--_s) calc(var(--_s) * 3),
+      var(--_s) calc(var(--_s) * 2),
+      calc(var(--_s) * 2) calc(var(--_s) * 2),
+      calc(var(--_s) * 2) var(--_s),
+      calc(var(--_s) * 3) var(--_s)
+    );
+  }
+
+  /* 4 steps per corner */
+  .pixel-rounded-xl {
+    --_s: var(--pixel-step);
+    clip-path: polygon(
+      calc(var(--_s) * 4) 0%,
+      calc(100% - var(--_s) * 4) 0%,
+      calc(100% - var(--_s) * 4) var(--_s),
+      calc(100% - var(--_s) * 3) var(--_s),
+      calc(100% - var(--_s) * 3) calc(var(--_s) * 2),
+      calc(100% - var(--_s) * 2) calc(var(--_s) * 2),
+      calc(100% - var(--_s) * 2) calc(var(--_s) * 3),
+      calc(100% - var(--_s)) calc(var(--_s) * 3),
+      calc(100% - var(--_s)) calc(var(--_s) * 4),
+      100% calc(var(--_s) * 4),
+      100% calc(100% - var(--_s) * 4),
+      calc(100% - var(--_s)) calc(100% - var(--_s) * 4),
+      calc(100% - var(--_s)) calc(100% - var(--_s) * 3),
+      calc(100% - var(--_s) * 2) calc(100% - var(--_s) * 3),
+      calc(100% - var(--_s) * 2) calc(100% - var(--_s) * 2),
+      calc(100% - var(--_s) * 3) calc(100% - var(--_s) * 2),
+      calc(100% - var(--_s) * 3) calc(100% - var(--_s)),
+      calc(100% - var(--_s) * 4) calc(100% - var(--_s)),
+      calc(100% - var(--_s) * 4) 100%,
+      calc(var(--_s) * 4) 100%,
+      calc(var(--_s) * 4) calc(100% - var(--_s)),
+      calc(var(--_s) * 3) calc(100% - var(--_s)),
+      calc(var(--_s) * 3) calc(100% - var(--_s) * 2),
+      calc(var(--_s) * 2) calc(100% - var(--_s) * 2),
+      calc(var(--_s) * 2) calc(100% - var(--_s) * 3),
+      var(--_s) calc(100% - var(--_s) * 3),
+      var(--_s) calc(100% - var(--_s) * 4),
+      0% calc(100% - var(--_s) * 4),
+      0% calc(var(--_s) * 4),
+      var(--_s) calc(var(--_s) * 4),
+      var(--_s) calc(var(--_s) * 3),
+      calc(var(--_s) * 2) calc(var(--_s) * 3),
+      calc(var(--_s) * 2) calc(var(--_s) * 2),
+      calc(var(--_s) * 3) calc(var(--_s) * 2),
+      calc(var(--_s) * 3) var(--_s),
+      calc(var(--_s) * 4) var(--_s)
+    );
   }
 }
