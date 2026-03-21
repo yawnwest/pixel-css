@@ -47,6 +47,11 @@
   --radius-sm: 0px;
   --radius-md: 0px;
   --radius-lg: 0px;
+  --pixel-corner: 3px;
+
+  /* Button */
+  --btn-highlight: rgba(255, 255, 255, 0.3);
+  --btn-shadow: rgba(0, 0, 0, 0.2);
 
   /* Transitions */
   --duration-*: initial;
@@ -93,61 +98,17 @@
   --color-destructive-foreground: #f5e6c8;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer base {
-  body,
-  button:not(:disabled),
-  a,
-  [role='button'] {
-    cursor:
-      url('./cursors/default.png') 1 1,
-      default;
-  }
-
-  button:not(:disabled),
-  a,
-  [role='button'] {
-    cursor:
-      url('./cursors/pointer.png') 5 0,
-      pointer;
-  }
-
-  :disabled,
-  [aria-disabled='true'] {
-    cursor:
-      url('./cursors/not-allowed.png') 3 4,
-      not-allowed;
-  }
-
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  span,
-  li,
-  blockquote,
-  input[type='text'],
-  input[type='email'],
-  input[type='password'],
-  input[type='search'],
-  textarea,
-  small,
-  .text-xs,
-  .text-sm,
-  .text-base,
-  .text-lg,
-  .text-xl,
-  .text-2xl,
-  .text-3xl,
-  .text-4xl,
-  [contenteditable] {
-    cursor:
-      url('./cursors/text.png') 5 8,
-      text;
-  }
-
   body {
     font-family: var(--font-pixel);
     background-color: var(--color-background);
@@ -225,6 +186,60 @@
     font-size: var(--text-sm);
     color: var(--color-muted-foreground);
   }
+
+  body,
+  button:not(:disabled),
+  a,
+  [role='button'] {
+    cursor:
+      url('./cursors/default.png') 1 1,
+      default;
+  }
+
+  button:not(:disabled),
+  a,
+  [role='button'] {
+    cursor:
+      url('./cursors/pointer.png') 5 0,
+      pointer;
+  }
+
+  :disabled,
+  [aria-disabled='true'] {
+    cursor:
+      url('./cursors/not-allowed.png') 3 4,
+      not-allowed;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  li,
+  blockquote,
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='search'],
+  textarea,
+  small,
+  .text-xs,
+  .text-sm,
+  .text-base,
+  .text-lg,
+  .text-xl,
+  .text-2xl,
+  .text-3xl,
+  .text-4xl,
+  [contenteditable] {
+    cursor:
+      url('./cursors/text.png') 5 8,
+      text;
+  }
 }
 
 @layer components {
@@ -233,29 +248,28 @@
     align-items: center;
     justify-content: center;
     padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
-    font-family: var(--font-pixel);
     font-size: var(--text-xs);
     line-height: 1;
     color: var(--color-primary-foreground);
     background-color: var(--color-muted-foreground);
     border: none;
     clip-path: polygon(
-      3px 0px,
-      calc(100% - 3px) 0px,
-      calc(100% - 3px) 3px,
-      100% 3px,
-      100% calc(100% - 3px),
-      calc(100% - 3px) calc(100% - 3px),
-      calc(100% - 3px) 100%,
-      3px 100%,
-      3px calc(100% - 3px),
-      0px calc(100% - 3px),
-      0px 3px,
-      3px 3px
+      var(--pixel-corner) 0px,
+      calc(100% - var(--pixel-corner)) 0px,
+      calc(100% - var(--pixel-corner)) var(--pixel-corner),
+      100% var(--pixel-corner),
+      100% calc(100% - var(--pixel-corner)),
+      calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
+      calc(100% - var(--pixel-corner)) 100%,
+      var(--pixel-corner) 100%,
+      var(--pixel-corner) calc(100% - var(--pixel-corner)),
+      0px calc(100% - var(--pixel-corner)),
+      0px var(--pixel-corner),
+      var(--pixel-corner) var(--pixel-corner)
     );
     box-shadow:
-      inset 3px 3px 0 rgba(255, 255, 255, 0.3),
-      inset -3px -3px 0 rgba(0, 0, 0, 0.2);
+      inset 3px 3px 0 var(--btn-highlight),
+      inset -3px -3px 0 var(--btn-shadow);
     filter: drop-shadow(4px 4px 0 var(--color-border));
     transition:
       box-shadow var(--duration-base) var(--ease-pixel),
@@ -265,14 +279,14 @@
   .btn:hover:not(:disabled) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
     box-shadow:
-      inset 3px 3px 0 rgba(255, 255, 255, 0.3),
-      inset -3px -3px 0 rgba(0, 0, 0, 0.2);
+      inset 3px 3px 0 var(--btn-highlight),
+      inset -3px -3px 0 var(--btn-shadow);
     filter: drop-shadow(8px 8px 0 var(--color-border));
   }
 
   .btn:active:not(:disabled) {
     box-shadow:
-      inset 3px 3px 0 rgba(0, 0, 0, 0.2),
+      inset 3px 3px 0 var(--btn-shadow),
       inset -3px -3px 0 rgba(255, 255, 255, 0.15);
     filter: none;
   }
@@ -310,21 +324,10 @@
 
   .btn-sm {
     padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
-    font-size: var(--text-xs);
   }
 
   .btn-lg {
     padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
     font-size: var(--text-sm);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }
