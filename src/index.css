@@ -242,6 +242,23 @@
       url('./cursors/text.png') 5 8,
       text;
   }
+
+  /* Scrollbar */
+  * {
+    scrollbar-color: var(--color-primary) var(--color-background);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
 }
 
 @layer components {
