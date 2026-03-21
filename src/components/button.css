@@ -1,0 +1,89 @@
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+    font-size: var(--text-xs);
+    line-height: 1;
+    color: var(--color-primary-foreground);
+    background-color: var(--color-muted-foreground);
+    border: none;
+    clip-path: polygon(
+      var(--pixel-corner) 0px,
+      calc(100% - var(--pixel-corner)) 0px,
+      calc(100% - var(--pixel-corner)) var(--pixel-corner),
+      100% var(--pixel-corner),
+      100% calc(100% - var(--pixel-corner)),
+      calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
+      calc(100% - var(--pixel-corner)) 100%,
+      var(--pixel-corner) 100%,
+      var(--pixel-corner) calc(100% - var(--pixel-corner)),
+      0px calc(100% - var(--pixel-corner)),
+      0px var(--pixel-corner),
+      var(--pixel-corner) var(--pixel-corner)
+    );
+    box-shadow:
+      inset 3px 3px 0 var(--btn-highlight),
+      inset -3px -3px 0 var(--btn-shadow);
+    filter: drop-shadow(4px 4px 0 var(--color-border));
+    transition:
+      box-shadow var(--duration-base) var(--ease-pixel),
+      filter var(--duration-base) var(--ease-pixel);
+  }
+
+  .btn:hover:not(:disabled) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+    box-shadow:
+      inset 3px 3px 0 var(--btn-highlight),
+      inset -3px -3px 0 var(--btn-shadow);
+    filter: drop-shadow(8px 8px 0 var(--color-border));
+  }
+
+  .btn:active:not(:disabled) {
+    box-shadow:
+      inset 3px 3px 0 var(--btn-shadow),
+      inset -3px -3px 0 rgba(255, 255, 255, 0.15);
+    filter: none;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 4px;
+  }
+
+  .btn:disabled {
+    box-shadow: none;
+    filter: none;
+    opacity: 0.4;
+  }
+
+  .btn-primary {
+    color: var(--color-primary-foreground);
+    background-color: var(--color-primary);
+  }
+
+  .btn-accent {
+    color: var(--color-accent-foreground);
+    background-color: var(--color-accent);
+  }
+
+  .btn-success {
+    color: var(--color-success-foreground);
+    background-color: var(--color-success);
+  }
+
+  .btn-destructive {
+    color: var(--color-destructive-foreground);
+    background-color: var(--color-destructive);
+  }
+
+  .btn-sm {
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  }
+
+  .btn-lg {
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
+    font-size: var(--text-sm);
+  }
+}
