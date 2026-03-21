@@ -83,6 +83,32 @@ Dark mode activates automatically based on the user's system preference. You can
 </html>
 ```
 
+## JavaScript
+
+pixel-css is CSS-only. Two common interactions require a small amount of JavaScript:
+
+**Theme toggle**
+
+```js
+const current = document.documentElement.dataset.theme
+document.documentElement.dataset.theme = current === 'dark' ? 'light' : 'dark'
+```
+
+**Copy to clipboard** (for `.panel-extra` code blocks)
+
+```js
+document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const code = btn.closest('.panel-extra').querySelector('code').textContent ?? ''
+    navigator.clipboard.writeText(code)
+    btn.textContent = 'copied!'
+    setTimeout(() => {
+      btn.textContent = 'copy'
+    }, 1500)
+  })
+})
+```
+
 ## Development
 
 ```bash
