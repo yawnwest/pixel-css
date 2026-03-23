@@ -1,4 +1,4 @@
-name: Deploy Playground
+name: Deploy Demo
 
 on:
   push:
@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build playground
-        run: pnpm build:playground
+      - name: Build demo
+        run: pnpm build:demo
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist-playground
+          path: dist-demo
 
       - name: Deploy to GitHub Pages
         id: deployment

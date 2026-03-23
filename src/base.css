@@ -1,22 +1,11 @@
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
 @layer base {
   body {
     font-family: var(--font-pixel);
     background-color: var(--color-background);
     color: var(--color-foreground);
     -webkit-font-smoothing: none;
-    font-smooth: never;
+    -moz-osx-font-smoothing: auto;
     overflow-wrap: break-word;
-    padding-inline: calc(var(--spacing) * 6);
   }
 
   * {
@@ -31,9 +20,7 @@
   h5,
   h6 {
     font-weight: bold;
-    line-height: var(--leading-normal);
-    color: var(--color-foreground);
-    margin-block: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
+    line-height: var(--leading-tight);
   }
 
   h1 {
@@ -56,17 +43,16 @@
   }
 
   p {
-    font-size: var(--text-base);
     line-height: var(--leading-normal);
   }
 
   a {
-    color: var(--color-accent);
+    color: var(--color-primary);
     text-decoration: underline;
   }
 
   a:hover {
-    color: var(--color-primary);
+    color: color-mix(in srgb, var(--color-primary) 70%, black);
   }
 
   a:focus-visible {
@@ -74,19 +60,7 @@
     outline-offset: 2px;
   }
 
-  code {
-    font-family: var(--font-pixel);
-    font-size: 0.9em;
-    background-color: var(--color-card);
-    color: var(--color-card-foreground);
-    padding: 0.1em 0.3em;
-  }
-
-  small {
-    font-size: var(--text-sm);
-    color: var(--color-muted-foreground);
-  }
-
+  /* Cursors */
   body,
   button:not(:disabled),
   a,
@@ -118,7 +92,6 @@
   h4,
   h5,
   h6,
-  span,
   li,
   blockquote,
   input[type='text'],
@@ -126,15 +99,6 @@
   input[type='password'],
   input[type='search'],
   textarea,
-  small,
-  .text-xs,
-  .text-sm,
-  .text-base,
-  .text-lg,
-  .text-xl,
-  .text-2xl,
-  .text-3xl,
-  .text-4xl,
   [contenteditable] {
     cursor:
       url('./cursors/text.png') 5 8,
@@ -143,7 +107,8 @@
 
   /* Scrollbar */
   * {
-    scrollbar-color: var(--color-primary) var(--color-background);
+    scrollbar-color: var(--color-border) var(--color-background);
+    scrollbar-width: thin;
   }
 
   ::-webkit-scrollbar-track {
@@ -151,10 +116,20 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-primary);
+    background: var(--color-border);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
+    background: color-mix(in srgb, var(--color-border) 70%, black);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

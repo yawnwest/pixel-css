@@ -4,11 +4,11 @@ test.beforeEach(async ({ page }) => {
   await page.goto('/')
 })
 
-test('playground header', async ({ page }) => {
-  await expect(page.locator('header')).toHaveScreenshot()
+test('typography', async ({ page }) => {
+  await expect(page.locator('body')).toHaveScreenshot()
 })
 
-test('dark mode', async ({ page }) => {
-  await page.click('#theme-toggle')
-  await expect(page).toHaveScreenshot()
+test('link focus', async ({ page }) => {
+  await page.locator('a').first().focus()
+  await expect(page.locator('a').first()).toHaveScreenshot()
 })

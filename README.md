@@ -113,7 +113,7 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
 
 ```bash
 pnpm install
-pnpm dev          # Start playground at http://localhost:5173
+pnpm dev          # Start demo at http://localhost:5173
 pnpm build        # Build the library
 pnpm test         # Run unit tests
 pnpm test:visual  # Run visual regression tests

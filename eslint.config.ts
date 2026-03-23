@@ -8,6 +8,6 @@ export default tseslint.config(
   },
   eslintConfigPrettier,
   {
-    ignores: ['dist/**', 'playground/**', 'node_modules/**'],
+    ignores: ['dist/**', 'demo/**', 'node_modules/**'],
   }
 )

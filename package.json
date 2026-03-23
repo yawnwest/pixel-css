@@ -18,10 +18,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite --mode playground",
+    "dev": "vite --mode demo",
     "build": "vite build",
-    "build:playground": "vite build --mode playground",
+    "build:demo": "vite build --mode demo",
     "prepublishOnly": "pnpm build",
+    "pretest": "pnpm build",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ci": "pnpm build && vitest run",
