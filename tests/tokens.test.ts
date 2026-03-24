@@ -12,13 +12,20 @@ describe('tokens source', () => {
     expect(theme).toContain('--color-foreground')
     expect(theme).toContain('--color-primary')
     expect(theme).toContain('--color-neutral')
+    expect(theme).toContain('--color-success')
+    expect(theme).toContain('--color-warning')
     expect(theme).toContain('--color-destructive')
     expect(theme).toContain('--color-ring')
     expect(theme).toContain('--color-border')
   })
 
-  it('defines font token', () => {
+  it('defines font tokens', () => {
     expect(theme).toContain('--font-pixel')
+    expect(theme).toContain('--font-code')
+  })
+
+  it('defines state tokens', () => {
+    expect(theme).toContain('--opacity-disabled')
   })
 
   it('defines text size tokens', () => {
@@ -42,5 +49,7 @@ describe('tokens source', () => {
     expect(css).toContain('./components/button.css')
     expect(css).toContain('./components/card.css')
     expect(css).toContain('./components/stack.css')
+    expect(css).toContain('./components/panel.css')
+    expect(css).toContain('./components/text.css')
   })
 })

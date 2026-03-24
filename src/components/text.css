@@ -1,0 +1,15 @@
+.text-primary {
+  color: var(--color-primary);
+}
+.text-success {
+  color: var(--color-success);
+}
+.text-warning {
+  color: var(--color-warning);
+}
+.text-destructive {
+  color: var(--color-destructive);
+}
+.text-disabled {
+  color: var(--color-neutral);
+}

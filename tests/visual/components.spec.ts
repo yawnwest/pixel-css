@@ -21,6 +21,10 @@ test('stack', async ({ page }) => {
   await expect(page.locator('#stack-demo')).toHaveScreenshot()
 })
 
+test('text colors', async ({ page }) => {
+  await expect(page.locator('#text-demo')).toHaveScreenshot()
+})
+
 test('buttons', async ({ page }) => {
   await expect(page.locator('#button-demo')).toHaveScreenshot()
 })
