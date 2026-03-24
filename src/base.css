@@ -46,6 +46,16 @@
     line-height: var(--leading-normal);
   }
 
+  pre,
+  code {
+    background-color: color-mix(in srgb, var(--color-background) 85%, black);
+  }
+
+  pre {
+    padding: calc(var(--spacing) * 3);
+    overflow-x: auto;
+  }
+
   a {
     color: var(--color-primary);
     text-decoration: underline;

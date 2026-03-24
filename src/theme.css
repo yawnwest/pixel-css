@@ -2,13 +2,13 @@
   /* Colors */
   --color-*: initial;
   --color-background: #ffffff; /* page background */
-  --color-surface: #f4f4ff; /* card/panel backgrounds */
+  --color-surface: #e8e8e8; /* card/panel backgrounds */
   --color-foreground: #1e1e3a; /* default text */
   --color-primary: #0078f8; /* main accent, CTAs — NES bright blue */
   --color-neutral: #888888; /* neutral actions */
   --color-destructive: #d82800; /* destructive actions — NES red */
   --color-ring: #60b4fc; /* focus rings — NES light blue */
-  --color-border: #3c50dc; /* borders, scrollbars and dividers */
+  --color-border: #222222; /* borders, scrollbars and dividers */
 
   /* Typography */
   --font-*: initial;

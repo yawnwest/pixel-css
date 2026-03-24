@@ -21,12 +21,33 @@
         accumsan. Phasellus ac turpis vel tortor sodales fermentum. Proin quis pharetra sem.
       </p>
 
-      <h2>Buttons</h2>
-      <div id="button-demo" class="flex gap-4 flex-wrap items-center pb-4 pr-4">
-        <button class="btn">Primary</button>
-        <button class="btn btn-neutral">Neutral</button>
-        <button class="btn btn-destructive">Destructive</button>
-        <button class="btn" disabled>Disabled</button>
+      <div class="panel">
+        <div class="panel-header">Buttons</div>
+        <div id="button-demo" class="panel-body">
+          <div class="flex gap-4 flex-wrap items-center">
+            <button class="btn">Primary</button>
+            <button class="btn btn-neutral">Neutral</button>
+            <button class="btn btn-destructive">Destructive</button>
+            <button class="btn" disabled>Disabled</button>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;button class="btn"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-neutral"&gt;Neutral&lt;/button&gt;
+&lt;button class="btn btn-destructive"&gt;Destructive&lt;/button&gt;
+&lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
 
       <h2>Panels</h2>
