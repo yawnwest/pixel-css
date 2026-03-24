@@ -12,3 +12,11 @@ test('link focus', async ({ page }) => {
   await page.locator('a').first().focus()
   await expect(page.locator('a').first()).toHaveScreenshot()
 })
+
+test('card', async ({ page }) => {
+  await expect(page.locator('#card-demo')).toHaveScreenshot()
+})
+
+test('stack', async ({ page }) => {
+  await expect(page.locator('#stack-demo')).toHaveScreenshot()
+})

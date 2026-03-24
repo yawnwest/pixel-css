@@ -6,27 +6,50 @@
     <title>Pixel CSS - Demo</title>
     <script type="module" src="./main.ts"></script>
   </head>
-  <body class="pb-16">
-    <h1>Pixel CSS</h1>
-    <a href=".">This is my Link</a>
+  <body class="p-8">
+    <div class="stack">
+      <h1>Pixel CSS</h1>
+      <a href=".">This is my Link</a>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget semper nisl, sit amet
-      tempor dui. Pellentesque lacinia diam auctor euismod tincidunt. Nunc purus tellus, feugiat in
-      odio nec, molestie lobortis magna. Quisque odio justo, tempor eu sem in, auctor volutpat ante.
-      Morbi ligula dui, fringilla nec pulvinar eu, consequat et massa. Morbi odio ante, hendrerit ut
-      ullamcorper in, volutpat vel risus. Vivamus facilisis dapibus magna, sit amet commodo quam.
-      Phasellus et erat libero. Integer pellentesque luctus nulla, vel cursus mi imperdiet sed.
-    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget semper nisl, sit amet
+        tempor dui. Pellentesque lacinia diam auctor euismod tincidunt. Nunc purus tellus, feugiat
+        in odio nec, molestie lobortis magna. Quisque odio justo, tempor eu sem in, auctor volutpat
+        ante. Morbi ligula dui, fringilla nec pulvinar eu, consequat et massa. Morbi odio ante,
+        hendrerit ut ullamcorper in, volutpat vel risus. Vivamus facilisis dapibus magna, sit amet
+        commodo quam. Phasellus et erat libero. Integer pellentesque luctus nulla, vel cursus mi
+        imperdiet sed.
+      </p>
 
-    <p>
-      Aliquam accumsan lacus felis, in mattis nibh tincidunt nec. Donec auctor blandit augue a
-      accumsan. Phasellus ac turpis vel tortor sodales fermentum. Proin quis pharetra sem. Praesent
-      venenatis sagittis rutrum. Fusce ut felis augue. Quisque et maximus tortor. Sed imperdiet eget
-      mi quis dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
-      turpis egestas. Suspendisse euismod commodo maximus. Nulla orci mauris, euismod porta ex non,
-      sollicitudin pharetra velit. Fusce ultrices orci quis nibh laoreet, nec interdum justo
-      viverra.
-    </p>
+      <p>
+        Aliquam accumsan lacus felis, in mattis nibh tincidunt nec. Donec auctor blandit augue a
+        accumsan. Phasellus ac turpis vel tortor sodales fermentum. Proin quis pharetra sem.
+        Praesent venenatis sagittis rutrum. Fusce ut felis augue. Quisque et maximus tortor. Sed
+        imperdiet eget mi quis dictum. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Suspendisse euismod commodo maximus. Nulla orci mauris,
+        euismod porta ex non, sollicitudin pharetra velit. Fusce ultrices orci quis nibh laoreet,
+        nec interdum justo viverra.
+      </p>
+
+      <h2>Cards</h2>
+      <div id="stack-demo" class="stack" style="max-width: 20rem">
+        <p>Stack item one</p>
+        <p>Stack item two</p>
+        <p>Stack item three</p>
+      </div>
+
+      <div class="flex gap-4 flex-wrap">
+        <div id="card-demo" class="card max-w-xs">
+          <h5>Card Title</h5>
+          <p>This is some content inside a card.</p>
+          <a href=".">A link inside a card</a>
+        </div>
+        <div class="card max-w-xs">
+          <h5>Another Card</h5>
+          <p>Cards can sit next to each other.</p>
+          <a href=".">Another link</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

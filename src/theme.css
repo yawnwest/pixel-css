@@ -2,10 +2,11 @@
   /* Colors */
   --color-*: initial;
   --color-background: #ffffff; /* page background */
+  --color-surface: #f4f4ff; /* card/panel backgrounds */
   --color-foreground: #1e1e3a; /* default text */
   --color-primary: #0078f8; /* main accent, CTAs — NES bright blue */
   --color-ring: #60b4fc; /* focus rings — NES light blue */
-  --color-border: #b8b8f8; /* borders, scrollbars and dividers */
+  --color-border: #3c50dc; /* borders, scrollbars and dividers */
 
   /* Typography */
   --font-*: initial;
@@ -22,4 +23,7 @@
   --leading-tight: 1.25;
   --leading-normal: 1.6;
   --leading-loose: 2;
+
+  /* Spacing */
+  --spacing: 0.25rem;
 }

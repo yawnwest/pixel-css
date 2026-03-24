@@ -8,6 +8,7 @@ const theme = readFileSync(resolve(__dirname, '../src/theme.css'), 'utf-8')
 describe('tokens source', () => {
   it('defines color tokens', () => {
     expect(theme).toContain('--color-background')
+    expect(theme).toContain('--color-surface')
     expect(theme).toContain('--color-foreground')
     expect(theme).toContain('--color-primary')
     expect(theme).toContain('--color-ring')
@@ -33,5 +34,10 @@ describe('tokens source', () => {
   it('imports theme and base', () => {
     expect(css).toContain('./theme.css')
     expect(css).toContain('./base.css')
+  })
+
+  it('imports components', () => {
+    expect(css).toContain('./components/card.css')
+    expect(css).toContain('./components/stack.css')
   })
 })
