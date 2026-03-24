@@ -5,6 +5,8 @@
   --color-surface: #f4f4ff; /* card/panel backgrounds */
   --color-foreground: #1e1e3a; /* default text */
   --color-primary: #0078f8; /* main accent, CTAs — NES bright blue */
+  --color-neutral: #888888; /* neutral actions */
+  --color-destructive: #d82800; /* destructive actions — NES red */
   --color-ring: #60b4fc; /* focus rings — NES light blue */
   --color-border: #3c50dc; /* borders, scrollbars and dividers */
 
@@ -26,4 +28,13 @@
 
   /* Spacing */
   --spacing: 0.25rem;
+
+  /* Borders */
+  --pixel-corner: 3px;
+
+  /* Transitions */
+  --duration-*: initial;
+  --duration-base: 50ms;
+  --duration-slow: 150ms;
+  --ease-pixel: steps(4);
 }

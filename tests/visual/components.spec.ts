@@ -20,3 +20,17 @@ test('card', async ({ page }) => {
 test('stack', async ({ page }) => {
   await expect(page.locator('#stack-demo')).toHaveScreenshot()
 })
+
+test('buttons', async ({ page }) => {
+  await expect(page.locator('#button-demo')).toHaveScreenshot()
+})
+
+test('button focus', async ({ page }) => {
+  await page.locator('#button-demo .btn').first().focus()
+  await expect(page.locator('#button-demo')).toHaveScreenshot()
+})
+
+test('button hover', async ({ page }) => {
+  await page.locator('#button-demo .btn').first().hover()
+  await expect(page.locator('#button-demo')).toHaveScreenshot()
+})

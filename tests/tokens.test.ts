@@ -11,6 +11,8 @@ describe('tokens source', () => {
     expect(theme).toContain('--color-surface')
     expect(theme).toContain('--color-foreground')
     expect(theme).toContain('--color-primary')
+    expect(theme).toContain('--color-neutral')
+    expect(theme).toContain('--color-destructive')
     expect(theme).toContain('--color-ring')
     expect(theme).toContain('--color-border')
   })
@@ -37,6 +39,7 @@ describe('tokens source', () => {
   })
 
   it('imports components', () => {
+    expect(css).toContain('./components/button.css')
     expect(css).toContain('./components/card.css')
     expect(css).toContain('./components/stack.css')
   })
