@@ -29,6 +29,31 @@
         <button class="btn" disabled>Disabled</button>
       </div>
 
+      <h2>Panels</h2>
+      <div class="flex gap-8 flex-wrap items-start">
+        <div class="panel" style="width: 20rem">
+          <div class="panel-header">Settings</div>
+          <div class="panel-body">
+            <p>Some content inside the panel body.</p>
+          </div>
+          <details class="panel-footer">
+            <summary class="btn">
+              <span class="panel-toggle-close">+</span>
+              <span class="panel-toggle-open">-</span>
+            </summary>
+            <div class="panel-footer-body">
+              <p>Hidden footer content goes here.</p>
+            </div>
+          </details>
+        </div>
+        <div class="panel panel-centered" style="width: 20rem">
+          <div class="panel-header">Centered</div>
+          <div class="panel-body">
+            <p>This panel has a centered header.</p>
+          </div>
+        </div>
+      </div>
+
       <h2>Cards</h2>
       <div id="stack-demo" class="stack" style="max-width: 20rem">
         <p>Stack item one</p>

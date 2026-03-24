@@ -1,0 +1,57 @@
+.panel {
+  --panel-toggle-offset: calc(var(--spacing) * 12);
+  position: relative;
+  border: 5px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.panel-header {
+  position: absolute;
+  top: 0;
+  left: calc(var(--spacing) * 3);
+  transform: translateY(-50%);
+  padding: 0 calc(var(--spacing) * 2);
+  background-color: var(--color-background);
+  line-height: 1;
+  max-width: calc(100% - var(--spacing) * 6);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panel-centered .panel-header {
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.panel-body {
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4) calc(var(--spacing) * 4);
+}
+
+.panel:has(.panel-footer) .panel-body {
+  padding-bottom: calc(var(--panel-toggle-offset) + var(--spacing) * 2);
+}
+
+.panel-footer > summary {
+  float: right;
+  list-style: none;
+  margin-top: calc(-1 * var(--panel-toggle-offset));
+  margin-right: calc(var(--spacing) * 4);
+}
+
+.panel-toggle-open {
+  display: none;
+}
+.panel-footer[open] .panel-toggle-close {
+  display: none;
+}
+.panel-footer[open] .panel-toggle-open {
+  display: inline;
+}
+
+.panel-footer-body {
+  clear: both;
+  padding: calc(var(--spacing) * 4);
+  border-top: 5px solid var(--color-border);
+  margin-top: calc(var(--spacing) * 4);
+}
