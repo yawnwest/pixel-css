@@ -203,13 +203,33 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
       <div class="panel panel-centered">
         <div class="panel-header">Input</div>
         <div id="input-demo" class="panel-body">
-          <div class="stack" style="gap: calc(var(--spacing) * 4); max-width: 20rem">
-            <input class="input" type="text" placeholder="Default" />
-            <input class="input input-success" type="text" placeholder="Success" />
-            <input class="input input-warning" type="text" placeholder="Warning" />
-            <input class="input input-destructive" type="text" placeholder="Destructive" />
-            <input class="input" type="text" placeholder="Disabled" disabled />
-            <textarea class="input" placeholder="Textarea"></textarea>
+          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
+            <input class="input" type="text" placeholder="Default" style="flex: 1 1 10rem" />
+            <input
+              class="input input-success"
+              type="text"
+              placeholder="Success"
+              style="flex: 1 1 10rem"
+            />
+            <input
+              class="input input-warning"
+              type="text"
+              placeholder="Warning"
+              style="flex: 1 1 10rem"
+            />
+            <input
+              class="input input-destructive"
+              type="text"
+              placeholder="Destructive"
+              style="flex: 1 1 10rem"
+            />
+            <input
+              class="input"
+              type="text"
+              placeholder="Disabled"
+              disabled
+              style="flex: 1 1 10rem"
+            />
           </div>
         </div>
         <details class="panel-footer">
@@ -222,7 +242,112 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
               <pre><code>&lt;input class="input" type="text" placeholder="Default"&gt;
 &lt;input class="input input-success" type="text"&gt;
 &lt;input class="input input-warning" type="text"&gt;
-&lt;input class="input input-destructive" type="text"&gt;</code></pre>
+&lt;input class="input input-destructive" type="text"&gt;
+&lt;input class="input" type="text" disabled&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Textarea</div>
+        <div id="textarea-demo" class="panel-body">
+          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
+            <textarea class="input" placeholder="Default" style="flex: 1 1 10rem"></textarea>
+            <textarea
+              class="input input-success"
+              placeholder="Success"
+              style="flex: 1 1 10rem"
+            ></textarea>
+            <textarea
+              class="input input-warning"
+              placeholder="Warning"
+              style="flex: 1 1 10rem"
+            ></textarea>
+            <textarea
+              class="input input-destructive"
+              placeholder="Destructive"
+              style="flex: 1 1 10rem"
+            ></textarea>
+            <textarea
+              class="input"
+              placeholder="Disabled"
+              disabled
+              style="flex: 1 1 10rem"
+            ></textarea>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;textarea class="input input-success"&gt;&lt;/textarea&gt;
+&lt;textarea class="input input-warning"&gt;&lt;/textarea&gt;
+&lt;textarea class="input input-destructive"&gt;&lt;/textarea&gt;
+&lt;textarea class="input" disabled&gt;&lt;/textarea&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Select</div>
+        <div id="select-demo" class="panel-body">
+          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </div>
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input input-success">
+                <option>Success</option>
+              </select>
+            </div>
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input input-warning">
+                <option>Warning</option>
+              </select>
+            </div>
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input input-destructive">
+                <option>Destructive</option>
+              </select>
+            </div>
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input" disabled>
+                <option>Disabled</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="select"&gt;
+  &lt;select class="input"&gt;
+    &lt;option&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="select"&gt;
+  &lt;select class="input input-success"&gt;...&lt;/select&gt;
+&lt;/div&gt;</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>

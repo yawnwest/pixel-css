@@ -1,0 +1,243 @@
+/* ─── Text input, Textarea ──────────────────────────────────────────────── */
+
+.input {
+  --input-color: var(--color-border);
+  --input-clip: polygon(
+    var(--pixel-corner) 0px,
+    calc(100% - var(--pixel-corner)) 0px,
+    calc(100% - var(--pixel-corner)) var(--pixel-corner),
+    100% var(--pixel-corner),
+    100% calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) 100%,
+    var(--pixel-corner) 100%,
+    var(--pixel-corner) calc(100% - var(--pixel-corner)),
+    0px calc(100% - var(--pixel-corner)),
+    0px var(--pixel-corner),
+    var(--pixel-corner) var(--pixel-corner)
+  );
+
+  display: block;
+  width: 100%;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border: 3px solid var(--input-color);
+  clip-path: var(--input-clip);
+  font-family: var(--font-pixel);
+  font-size: var(--text-sm);
+  line-height: var(--leading-tight);
+}
+
+.input::placeholder {
+  color: var(--color-neutral);
+  opacity: 1;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input:focus-visible {
+  outline: 3px solid var(--color-ring);
+  outline-offset: 4px;
+}
+
+.input:disabled {
+  opacity: var(--opacity-disabled);
+}
+
+textarea.input {
+  resize: none;
+  min-height: calc(var(--spacing) * 24);
+}
+
+.input-success {
+  --input-color: var(--color-success);
+}
+
+.input-warning {
+  --input-color: var(--color-warning);
+}
+
+.input-destructive {
+  --input-color: var(--color-destructive);
+}
+
+/* ─── Select ────────────────────────────────────────────────────────────── */
+
+.select {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.select select {
+  appearance: none;
+  padding-right: calc(var(--spacing) * 10);
+}
+
+.select::after {
+  content: '';
+  position: absolute;
+  right: calc(var(--spacing) * 4);
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
+  width: 10px;
+  height: 6px;
+  background-color: var(--color-foreground);
+  clip-path: polygon(
+    0px 0px,
+    10px 0px,
+    10px 2px,
+    8px 2px,
+    8px 4px,
+    6px 4px,
+    6px 6px,
+    4px 6px,
+    4px 4px,
+    2px 4px,
+    2px 2px,
+    0px 2px
+  );
+}
+
+.select:has(select:disabled) {
+  opacity: var(--opacity-disabled);
+}
+
+.select:has(select:disabled) select {
+  opacity: 1;
+}
+
+/* ─── Checkbox ──────────────────────────────────────────────────────────── */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  user-select: none;
+  line-height: 1;
+}
+
+.checkbox input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.checkbox-indicator {
+  flex-shrink: 0;
+  align-self: center;
+  translate: 0 -1px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-foreground);
+  position: relative;
+}
+
+.checkbox-indicator::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-color: var(--color-foreground);
+  opacity: 0;
+}
+
+.checkbox input[type='checkbox']:checked + .checkbox-indicator::before {
+  opacity: 1;
+}
+
+.checkbox:has(input[type='checkbox']:focus-visible) {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 4px;
+}
+
+.checkbox:has(input[type='checkbox']:disabled) {
+  opacity: var(--opacity-disabled);
+}
+
+/* ─── Radio ─────────────────────────────────────────────────────────────── */
+
+@keyframes radio-blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  user-select: none;
+  line-height: 1;
+}
+
+.radio input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.radio-indicator {
+  display: inline-block;
+  width: 9px;
+  height: 15px;
+  flex-shrink: 0;
+  align-self: center;
+  background-color: var(--color-foreground);
+  clip-path: polygon(
+    0px 0px,
+    3px 0px,
+    3px 3px,
+    6px 3px,
+    6px 6px,
+    9px 6px,
+    9px 9px,
+    6px 9px,
+    6px 12px,
+    3px 12px,
+    3px 15px,
+    0px 15px
+  );
+  opacity: 0;
+}
+
+.radio input[type='radio']:checked + .radio-indicator {
+  opacity: 1;
+}
+
+.radio:not(:has(input[type='radio']:disabled)):hover .radio-indicator,
+.radio:not(:has(input[type='radio']:disabled)):has(input[type='radio']:focus-visible)
+  .radio-indicator {
+  opacity: 1;
+  animation: radio-blink calc(var(--duration-base) * 8) steps(2) infinite;
+}
+
+.radio:has(input[type='radio']:focus-visible) {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 4px;
+}
+
+.radio:has(input[type='radio']:disabled) {
+  opacity: var(--opacity-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio:not(:has(input[type='radio']:disabled)):hover .radio-indicator,
+  .radio:not(:has(input[type='radio']:disabled)):has(input[type='radio']:focus-visible)
+    .radio-indicator {
+    animation: none;
+  }
+}

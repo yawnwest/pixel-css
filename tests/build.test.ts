@@ -40,5 +40,6 @@ describe('dist/style.css', () => {
     expect(dist).toContain('.input-success')
     expect(dist).toContain('.input-warning')
     expect(dist).toContain('.input-destructive')
+    expect(dist).toContain('.select')
   })
 })

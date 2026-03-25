@@ -131,3 +131,36 @@ test('input focus', async ({ page }) => {
   await page.locator('#input-demo .input').first().focus()
   await expect(page.locator('#input-demo')).toHaveScreenshot()
 })
+
+test('input disabled', async ({ page }) => {
+  await page.locator('#input-demo .input[disabled]').hover()
+  await expect(page.locator('#input-demo')).toHaveScreenshot()
+})
+
+test('textarea default', async ({ page }) => {
+  await expect(page.locator('#textarea-demo')).toHaveScreenshot()
+})
+
+test('textarea focus', async ({ page }) => {
+  await page.locator('#textarea-demo .input').first().focus()
+  await expect(page.locator('#textarea-demo')).toHaveScreenshot()
+})
+
+test('textarea disabled', async ({ page }) => {
+  await page.locator('#textarea-demo .input[disabled]').hover()
+  await expect(page.locator('#textarea-demo')).toHaveScreenshot()
+})
+
+test('select default', async ({ page }) => {
+  await expect(page.locator('#select-demo')).toHaveScreenshot()
+})
+
+test('select focus', async ({ page }) => {
+  await page.locator('#select-demo select.input').first().focus()
+  await expect(page.locator('#select-demo')).toHaveScreenshot()
+})
+
+test('select disabled', async ({ page }) => {
+  await page.locator('#select-demo .select:has(select:disabled)').hover()
+  await expect(page.locator('#select-demo')).toHaveScreenshot()
+})
