@@ -62,7 +62,6 @@ pnpm install
 pnpm dev          # Start demo at http://localhost:5173
 pnpm build        # Build the library
 pnpm test         # Run unit tests
-pnpm test:visual  # Run visual regression tests
 pnpm lint         # Lint
 pnpm format       # Format
 pnpm size         # Check bundle size
