@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-03-25
+
 ### Added
 
 - Tailwind
@@ -26,4 +28,5 @@
 - Some basic styling
 - A sample playground
 
+[0.4.0]: https://github.com/yawnwest/pixel-css/releases/tag/v0.4.0
 [0.3.0]: https://github.com/yawnwest/pixel-css/releases/tag/v0.3.0
