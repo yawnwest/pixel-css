@@ -24,7 +24,6 @@
   padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
   color: #ffffff;
   line-height: var(--leading-tight);
-  cursor: pointer;
   transition: translate var(--duration-base) var(--ease-pixel);
 }
 

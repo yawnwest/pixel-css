@@ -23,4 +23,10 @@ describe('dist/style.css', () => {
   it('contains reduced motion media query', () => {
     expect(dist).toContain('prefers-reduced-motion')
   })
+
+  it('contains radio component', () => {
+    expect(dist).toContain('.radio')
+    expect(dist).toContain('.radio-indicator')
+    expect(dist).toContain('radio-blink')
+  })
 })

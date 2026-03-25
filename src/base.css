@@ -82,15 +82,18 @@
   }
 
   button:not(:disabled),
+  summary,
   a,
-  [role='button'] {
+  [role='button'],
+  .radio:not(:has(input:disabled)) {
     cursor:
       url('./cursors/pointer.png') 5 0,
       pointer;
   }
 
   :disabled,
-  [aria-disabled='true'] {
+  [aria-disabled='true'],
+  .radio:has(input:disabled) {
     cursor:
       url('./cursors/not-allowed.png') 3 4,
       not-allowed;

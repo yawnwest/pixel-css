@@ -67,6 +67,39 @@ test('dark mode', async ({ page }) => {
 })
 
 test('copy button', async ({ page }) => {
-  await page.locator('[data-copy-btn]').first().click()
-  await expect(page.locator('[data-copy-btn]').first()).toHaveScreenshot()
+  await page.evaluate(() => {
+    Object.defineProperty(navigator, 'clipboard', {
+      value: { writeText: () => Promise.resolve() },
+      configurable: true,
+    })
+  })
+  await page.locator('.panel-footer summary').first().click()
+  const copyBtn = page.locator('[data-copy-btn]').first()
+  await copyBtn.click()
+  await expect(copyBtn).toHaveScreenshot()
+})
+
+test('radio default', async ({ page }) => {
+  await expect(page.locator('#radio-demo')).toHaveScreenshot()
+})
+
+test('radio hover', async ({ page }) => {
+  await page.addStyleTag({
+    content: '*, *::before, *::after { animation-play-state: paused !important; }',
+  })
+  await page.locator('#radio-demo .radio').nth(1).hover()
+  await expect(page.locator('#radio-demo')).toHaveScreenshot()
+})
+
+test('radio focus', async ({ page }) => {
+  await page.addStyleTag({
+    content: '*, *::before, *::after { animation-play-state: paused !important; }',
+  })
+  await page.locator('#radio-demo input[type="radio"]').nth(1).focus()
+  await expect(page.locator('#radio-demo')).toHaveScreenshot()
+})
+
+test('radio disabled', async ({ page }) => {
+  await page.locator('#radio-demo .radio').nth(2).hover()
+  await expect(page.locator('#radio-demo')).toHaveScreenshot()
 })
