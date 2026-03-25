@@ -112,93 +112,6 @@ if (themeToggle) {
         </details>
       </div>
 
-      <h2>Panels</h2>
-      <div class="flex gap-8 flex-wrap items-start">
-        <div class="panel" style="width: 20rem">
-          <div class="panel-header">Settings</div>
-          <div class="panel-body">
-            <p>This is a panel with text.</p>
-          </div>
-        </div>
-        <div class="panel panel-centered" style="width: 20rem">
-          <div class="panel-header">Centered</div>
-          <div class="panel-body">
-            <p>This panel has a centered header and a centered footer.</p>
-          </div>
-          <details class="panel-footer">
-            <summary class="btn">
-              <span class="panel-toggle-close">+</span>
-              <span class="panel-toggle-open">-</span>
-            </summary>
-            <div class="panel-footer-body">
-              <div class="panel-extra">
-                <pre><code>&lt;div class="panel panel-centered"&gt;
-  &lt;div class="panel-header"&gt;Centered&lt;/div&gt;
-  &lt;div class="panel-body"&gt;
-    &lt;p&gt;Content&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;details class="panel-footer"&gt;
-    &lt;summary class="btn"&gt;
-      &lt;span class="panel-toggle-close"&gt;+&lt;/span&gt;
-      &lt;span class="panel-toggle-open"&gt;-&lt;/span&gt;
-    &lt;/summary&gt;
-    &lt;div class="panel-footer-body"&gt;
-      &lt;p&gt;Footer content&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/details&gt;
-&lt;/div&gt;</code></pre>
-                <div class="flex justify-end mt-2">
-                  <button class="btn btn-neutral" data-copy-btn>copy</button>
-                </div>
-              </div>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <div class="panel" style="width: 42rem">
-        <div class="panel-header">Copy Button</div>
-        <div class="panel-body">
-          <div class="panel-extra">
-            This panel has a copy button and a details area which provides documentation.
-            <pre><code>Some text to copy</code></pre>
-            <div class="flex justify-end mt-2">
-              <button class="btn btn-neutral" data-copy-btn>copy</button>
-            </div>
-          </div>
-        </div>
-        <details class="panel-footer">
-          <summary class="btn">
-            <span class="panel-toggle-close">+</span>
-            <span class="panel-toggle-open">-</span>
-          </summary>
-          <div class="panel-footer-body">
-            <div class="panel-extra">
-              <pre><code>&lt;div class="panel-extra"&gt;
-  &lt;pre&gt;&lt;code&gt;Some text to copy&lt;/code&gt;&lt;/pre&gt;
-  &lt;div class="flex justify-end mt-2"&gt;
-    &lt;button class="btn btn-neutral" data-copy-btn&gt;copy&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const code = btn.closest('.panel-extra')!.querySelector('code')!.textContent ?? ''
-    navigator.clipboard.writeText(code)
-    btn.textContent = 'copied!'
-    setTimeout(() => {
-      btn.textContent = 'copy'
-    }, 1500)
-  })
-})</code></pre>
-              <div class="flex justify-end mt-2">
-                <button class="btn btn-neutral" data-copy-btn>copy</button>
-              </div>
-            </div>
-          </div>
-        </details>
-      </div>
-
       <h2>Form</h2>
       <div class="panel panel-centered">
         <div class="panel-header">Input</div>
@@ -586,6 +499,93 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
   &lt;p&gt;Stack item two&lt;/p&gt;
   &lt;p&gt;Stack item three&lt;/p&gt;
 &lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <h3>Panels</h3>
+      <div class="flex gap-8 flex-wrap items-start">
+        <div class="panel" style="width: 20rem">
+          <div class="panel-header">Settings</div>
+          <div class="panel-body">
+            <p>This is a panel with text.</p>
+          </div>
+        </div>
+        <div class="panel panel-centered" style="width: 20rem">
+          <div class="panel-header">Centered</div>
+          <div class="panel-body">
+            <p>This panel has a centered header and a centered footer.</p>
+          </div>
+          <details class="panel-footer">
+            <summary class="btn">
+              <span class="panel-toggle-close">+</span>
+              <span class="panel-toggle-open">-</span>
+            </summary>
+            <div class="panel-footer-body">
+              <div class="panel-extra">
+                <pre><code>&lt;div class="panel panel-centered"&gt;
+  &lt;div class="panel-header"&gt;Centered&lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;details class="panel-footer"&gt;
+    &lt;summary class="btn"&gt;
+      &lt;span class="panel-toggle-close"&gt;+&lt;/span&gt;
+      &lt;span class="panel-toggle-open"&gt;-&lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;div class="panel-footer-body"&gt;
+      &lt;p&gt;Footer content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                <div class="flex justify-end mt-2">
+                  <button class="btn btn-neutral" data-copy-btn>copy</button>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="panel" style="width: 42rem">
+        <div class="panel-header">Copy Button</div>
+        <div class="panel-body">
+          <div class="panel-extra">
+            This panel has a copy button and a details area which provides documentation.
+            <pre><code>Some text to copy</code></pre>
+            <div class="flex justify-end mt-2">
+              <button class="btn btn-neutral" data-copy-btn>copy</button>
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="panel-extra"&gt;
+  &lt;pre&gt;&lt;code&gt;Some text to copy&lt;/code&gt;&lt;/pre&gt;
+  &lt;div class="flex justify-end mt-2"&gt;
+    &lt;button class="btn btn-neutral" data-copy-btn&gt;copy&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const code = btn.closest('.panel-extra')!.querySelector('code')!.textContent ?? ''
+    navigator.clipboard.writeText(code)
+    btn.textContent = 'copied!'
+    setTimeout(() => {
+      btn.textContent = 'copy'
+    }, 1500)
+  })
+})</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>

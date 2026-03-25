@@ -24,13 +24,30 @@ describe('tokens source', () => {
     expect(theme).toContain('--font-code')
   })
 
+  it('defines spacing and corner tokens', () => {
+    expect(theme).toContain('--spacing')
+    expect(theme).toContain('--pixel-corner')
+    expect(theme).toContain('--pixel-clip')
+  })
+
   it('defines state tokens', () => {
     expect(theme).toContain('--opacity-disabled')
   })
 
+  it('defines animation tokens', () => {
+    expect(theme).toContain('--duration-base')
+    expect(theme).toContain('--duration-slow')
+    expect(theme).toContain('--ease-pixel')
+  })
+
   it('defines text size tokens', () => {
     expect(theme).toContain('--text-xs')
+    expect(theme).toContain('--text-sm')
     expect(theme).toContain('--text-base')
+    expect(theme).toContain('--text-lg')
+    expect(theme).toContain('--text-xl')
+    expect(theme).toContain('--text-2xl')
+    expect(theme).toContain('--text-3xl')
     expect(theme).toContain('--text-4xl')
   })
 

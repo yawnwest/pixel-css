@@ -1,20 +1,6 @@
 .btn {
   --btn-color: var(--color-primary);
   --btn-shadow-offset: 3px;
-  --btn-clip: polygon(
-    var(--pixel-corner) 0px,
-    calc(100% - var(--pixel-corner)) 0px,
-    calc(100% - var(--pixel-corner)) var(--pixel-corner),
-    100% var(--pixel-corner),
-    100% calc(100% - var(--pixel-corner)),
-    calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
-    calc(100% - var(--pixel-corner)) 100%,
-    var(--pixel-corner) 100%,
-    var(--pixel-corner) calc(100% - var(--pixel-corner)),
-    0px calc(100% - var(--pixel-corner)),
-    0px var(--pixel-corner),
-    var(--pixel-corner) var(--pixel-corner)
-  );
 
   position: relative;
   isolation: isolate;
@@ -40,7 +26,7 @@
   inset: 0;
   z-index: -1;
   background-color: var(--btn-color);
-  clip-path: var(--btn-clip);
+  clip-path: var(--pixel-clip);
   transition: background-color var(--duration-base) var(--ease-pixel);
 }
 
@@ -51,7 +37,7 @@
   z-index: -2;
   background-color: color-mix(in srgb, var(--btn-color) 40%, black);
   translate: var(--btn-shadow-offset) var(--btn-shadow-offset);
-  clip-path: var(--btn-clip);
+  clip-path: var(--pixel-clip);
   transition: translate var(--duration-base) var(--ease-pixel);
 }
 

@@ -35,11 +35,44 @@ describe('dist/style.css', () => {
     expect(dist).toContain('.checkbox-indicator')
   })
 
+  it('contains button component', () => {
+    expect(dist).toContain('.btn')
+    expect(dist).toContain('.btn-neutral')
+    expect(dist).toContain('.btn-destructive')
+  })
+
+  it('contains card component', () => {
+    expect(dist).toContain('.card')
+  })
+
+  it('contains stack component', () => {
+    expect(dist).toContain('.stack')
+  })
+
+  it('contains panel component', () => {
+    expect(dist).toContain('.panel')
+    expect(dist).toContain('.panel-header')
+    expect(dist).toContain('.panel-body')
+    expect(dist).toContain('.panel-footer')
+  })
+
+  it('contains text color utilities', () => {
+    expect(dist).toContain('.text-primary')
+    expect(dist).toContain('.text-success')
+    expect(dist).toContain('.text-warning')
+    expect(dist).toContain('.text-destructive')
+    expect(dist).toContain('.text-disabled')
+  })
+
   it('contains input component', () => {
     expect(dist).toContain('.input')
+    expect(dist).toContain('.input-wrap')
     expect(dist).toContain('.input-success')
     expect(dist).toContain('.input-warning')
     expect(dist).toContain('.input-destructive')
+  })
+
+  it('contains select component', () => {
     expect(dist).toContain('.select')
   })
 

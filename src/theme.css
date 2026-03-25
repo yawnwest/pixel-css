@@ -34,6 +34,20 @@
 
   /* Borders */
   --pixel-corner: 3px;
+  --pixel-clip: polygon(
+    var(--pixel-corner) 0px,
+    calc(100% - var(--pixel-corner)) 0px,
+    calc(100% - var(--pixel-corner)) var(--pixel-corner),
+    100% var(--pixel-corner),
+    100% calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) 100%,
+    var(--pixel-corner) 100%,
+    var(--pixel-corner) calc(100% - var(--pixel-corner)),
+    0px calc(100% - var(--pixel-corner)),
+    0px var(--pixel-corner),
+    var(--pixel-corner) var(--pixel-corner)
+  );
 
   /* States */
   --opacity-disabled: 0.4;
