@@ -41,8 +41,10 @@
   transition: translate var(--duration-base) var(--ease-pixel);
 }
 
-.btn:hover:not(:disabled)::before {
-  background-color: color-mix(in srgb, var(--btn-color) 80%, black);
+@media (hover: hover) {
+  .btn:hover:not(:disabled)::before {
+    background-color: color-mix(in srgb, var(--btn-color) 80%, black);
+  }
 }
 
 .btn:active:not(:disabled) {

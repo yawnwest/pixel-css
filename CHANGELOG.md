@@ -2,6 +2,16 @@
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-03-25
+
+### Changed
+
+- Reduced opacity of text placeholders
+
+### Fixed
+
+- Removed mouse over effects for buttons and radios on touchscreens
+
 ## [0.4.0] - 2026-03-25
 
 ### Added
