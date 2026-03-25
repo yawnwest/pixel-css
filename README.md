@@ -39,7 +39,7 @@ This gives you Tailwind's preflight reset, all Tailwind utility classes, and the
 - **CSS reset** — Tailwind preflight with pixelated image rendering
 - **Typography** — headings, paragraphs, links, and code using Press Start 2P
 - **Dark mode** — automatic via `prefers-color-scheme`, or manual via `data-theme="dark"` / `data-theme="light"`
-- **Size-constrained** — CSS bundle capped at 35 KB
+- **Size-constrained** — CSS bundle capped at 25 KB
 
 ## Dark mode
 

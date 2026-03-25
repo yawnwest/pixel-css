@@ -79,7 +79,7 @@
     },
     {
       "path": "dist/style.css",
-      "limit": "35 kB"
+      "limit": "25 kB"
     }
   ]
 }
