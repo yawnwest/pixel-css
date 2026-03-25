@@ -60,3 +60,10 @@
   --color-foreground: #f4f4ff;
   --color-border: #888888;
 }
+
+[data-theme='light'] {
+  --color-background: #ffffff;
+  --color-surface: #e8e8e8;
+  --color-foreground: #1e1e3a;
+  --color-border: #222222;
+}

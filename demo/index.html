@@ -19,7 +19,7 @@
       <div class="panel panel-centered">
         <div class="panel-header">Dark Mode</div>
         <div class="panel-body">
-          Pixel CSS has a <button class="btn btn-primary" id="theme-toggle">Dark</button> mode.
+          Pixel CSS has a <button class="btn btn-primary" id="theme-toggle">Light</button> mode.
         </div>
         <details class="panel-footer">
           <summary class="btn">
@@ -29,21 +29,21 @@
           <div class="panel-footer-body">
             <div class="panel-extra">
               <pre><code>&lt;!--- HTML ---&gt;
-&lt;button class="btn btn-neutral" id="theme-toggle"&gt;Dark&lt;/button&gt;
+&lt;button class="btn btn-primary" id="theme-toggle"&gt;Light&lt;/button&gt;
 
 // JavaScript
 const themeToggle = document.getElementById('theme-toggle')
 
-themeToggle?.addEventListener('click', () => {
-  const isDark = document.documentElement.dataset.theme === 'dark'
-  if (isDark) {
-    delete document.documentElement.dataset.theme
-    themeToggle.textContent = 'Dark'
-  } else {
-    document.documentElement.dataset.theme = 'dark'
-    themeToggle.textContent = 'Light'
-  }
-})</code></pre>
+if (themeToggle) {
+  let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  themeToggle.textContent = isDark ? 'Light' : 'Dark'
+
+  themeToggle.addEventListener('click', () => {
+    isDark = !isDark
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light'
+    themeToggle.textContent = isDark ? 'Light' : 'Dark'
+  })
+}</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
@@ -231,6 +231,30 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
               style="flex: 1 1 10rem"
             />
           </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: calc(var(--spacing) * 4);
+              margin-top: calc(var(--spacing) * 4);
+            "
+          >
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Default" />
+            </div>
+            <div class="input-wrap input-success" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Success" />
+            </div>
+            <div class="input-wrap input-warning" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Warning" />
+            </div>
+            <div class="input-wrap input-destructive" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Destructive" />
+            </div>
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Disabled" disabled />
+            </div>
+          </div>
         </div>
         <details class="panel-footer">
           <summary class="btn">
@@ -239,11 +263,31 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
           </summary>
           <div class="panel-footer-body">
             <div class="panel-extra">
-              <pre><code>&lt;input class="input" type="text" placeholder="Default"&gt;
+              <pre><code>
+
+&lt;!-- without shadow --&gt;
+&lt;input class="input" type="text" placeholder="Default"&gt;
 &lt;input class="input input-success" type="text"&gt;
 &lt;input class="input input-warning" type="text"&gt;
 &lt;input class="input input-destructive" type="text"&gt;
-&lt;input class="input" type="text" disabled&gt;</code></pre>
+&lt;input class="input" type="text" disabled&gt;
+
+&lt;!-- with shadow --&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;input class="input" type="text" placeholder="Default"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-success"&gt;
+  &lt;input class="input" type="text"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-warning"&gt;
+  &lt;input class="input" type="text"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-destructive"&gt;
+  &lt;input class="input" type="text"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;input class="input" type="text" disabled&gt;
+&lt;/div&gt;</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
@@ -256,28 +300,21 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
         <div class="panel-header">Textarea</div>
         <div id="textarea-demo" class="panel-body">
           <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
-            <textarea class="input" placeholder="Default" style="flex: 1 1 10rem"></textarea>
-            <textarea
-              class="input input-success"
-              placeholder="Success"
-              style="flex: 1 1 10rem"
-            ></textarea>
-            <textarea
-              class="input input-warning"
-              placeholder="Warning"
-              style="flex: 1 1 10rem"
-            ></textarea>
-            <textarea
-              class="input input-destructive"
-              placeholder="Destructive"
-              style="flex: 1 1 10rem"
-            ></textarea>
-            <textarea
-              class="input"
-              placeholder="Disabled"
-              disabled
-              style="flex: 1 1 10rem"
-            ></textarea>
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Default"></textarea>
+            </div>
+            <div class="input-wrap input-success" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Success"></textarea>
+            </div>
+            <div class="input-wrap input-warning" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Warning"></textarea>
+            </div>
+            <div class="input-wrap input-destructive" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Destructive"></textarea>
+            </div>
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Disabled" disabled></textarea>
+            </div>
           </div>
         </div>
         <details class="panel-footer">
@@ -287,11 +324,21 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
           </summary>
           <div class="panel-footer-body">
             <div class="panel-extra">
-              <pre><code>&lt;textarea class="input"&gt;&lt;/textarea&gt;
-&lt;textarea class="input input-success"&gt;&lt;/textarea&gt;
-&lt;textarea class="input input-warning"&gt;&lt;/textarea&gt;
-&lt;textarea class="input input-destructive"&gt;&lt;/textarea&gt;
-&lt;textarea class="input" disabled&gt;&lt;/textarea&gt;</code></pre>
+              <pre><code>&lt;div class="input-wrap"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-success"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-warning"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-destructive"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;textarea class="input" disabled&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
@@ -311,18 +358,18 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
                 <option>Option 3</option>
               </select>
             </div>
-            <div class="select" style="flex: 1 1 10rem">
-              <select class="input input-success">
+            <div class="select input-success" style="flex: 1 1 10rem">
+              <select class="input">
                 <option>Success</option>
               </select>
             </div>
-            <div class="select" style="flex: 1 1 10rem">
-              <select class="input input-warning">
+            <div class="select input-warning" style="flex: 1 1 10rem">
+              <select class="input">
                 <option>Warning</option>
               </select>
             </div>
-            <div class="select" style="flex: 1 1 10rem">
-              <select class="input input-destructive">
+            <div class="select input-destructive" style="flex: 1 1 10rem">
+              <select class="input">
                 <option>Destructive</option>
               </select>
             </div>
@@ -360,11 +407,21 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
         <div class="panel-header">Progress</div>
         <div id="progress-demo" class="panel-body">
           <div class="stack" style="gap: calc(var(--spacing) * 4)">
-            <div class="progress" style="--progress: 60%"></div>
-            <div class="progress progress-success" style="--progress: 80%"></div>
-            <div class="progress progress-warning" style="--progress: 40%"></div>
-            <div class="progress progress-destructive" style="--progress: 20%"></div>
-            <div class="progress progress-indeterminate"></div>
+            <div class="progress-wrap">
+              <div class="progress" style="--progress: 60%"></div>
+            </div>
+            <div class="progress-wrap progress-success">
+              <div class="progress" style="--progress: 80%"></div>
+            </div>
+            <div class="progress-wrap progress-warning">
+              <div class="progress" style="--progress: 40%"></div>
+            </div>
+            <div class="progress-wrap progress-destructive">
+              <div class="progress" style="--progress: 20%"></div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress progress-indeterminate"></div>
+            </div>
           </div>
         </div>
         <details class="panel-footer">
@@ -374,11 +431,21 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
           </summary>
           <div class="panel-footer-body">
             <div class="panel-extra">
-              <pre><code>&lt;div class="progress" style="--progress: 60%"&gt;&lt;/div&gt;
-&lt;div class="progress progress-success" style="--progress: 80%"&gt;&lt;/div&gt;
-&lt;div class="progress progress-warning" style="--progress: 40%"&gt;&lt;/div&gt;
-&lt;div class="progress progress-destructive" style="--progress: 20%"&gt;&lt;/div&gt;
-&lt;div class="progress progress-indeterminate"&gt;&lt;/div&gt;</code></pre>
+              <pre><code>&lt;div class="progress-wrap"&gt;
+  &lt;div class="progress" style="--progress: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap progress-success"&gt;
+  &lt;div class="progress" style="--progress: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap progress-warning"&gt;
+  &lt;div class="progress" style="--progress: 40%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap progress-destructive"&gt;
+  &lt;div class="progress" style="--progress: 20%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap"&gt;
+  &lt;div class="progress progress-indeterminate"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>

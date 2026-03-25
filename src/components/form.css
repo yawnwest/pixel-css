@@ -1,7 +1,13 @@
 /* ─── Text input, Textarea ──────────────────────────────────────────────── */
 
-.input {
+.input-wrap {
   --input-color: var(--color-border);
+  display: block;
+  width: 100%;
+  filter: drop-shadow(3px 3px 0 color-mix(in srgb, var(--input-color) 50%, black));
+}
+
+.input {
   --input-clip: polygon(
     var(--pixel-corner) 0px,
     calc(100% - var(--pixel-corner)) 0px,
@@ -22,7 +28,7 @@
   padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
   background-color: var(--color-background);
   color: var(--color-foreground);
-  border: 3px solid var(--input-color);
+  border: 3px solid var(--input-color, var(--color-border));
   clip-path: var(--input-clip);
   font-family: var(--font-pixel);
   font-size: var(--text-sm);
@@ -43,8 +49,13 @@
   outline-offset: 4px;
 }
 
-.input:disabled {
+.input:disabled,
+.input-wrap:has(:disabled) {
   opacity: var(--opacity-disabled);
+}
+
+.input-wrap:has(:disabled) .input {
+  opacity: 1;
 }
 
 textarea.input {
@@ -52,15 +63,18 @@ textarea.input {
   min-height: calc(var(--spacing) * 24);
 }
 
-.input-success {
+.input-success,
+.input-wrap.input-success {
   --input-color: var(--color-success);
 }
 
-.input-warning {
+.input-warning,
+.input-wrap.input-warning {
   --input-color: var(--color-warning);
 }
 
-.input-destructive {
+.input-destructive,
+.input-wrap.input-destructive {
   --input-color: var(--color-destructive);
 }
 
@@ -70,6 +84,9 @@ textarea.input {
   position: relative;
   display: block;
   width: 100%;
+  filter: drop-shadow(
+    3px 3px 0 color-mix(in srgb, var(--input-color, var(--color-border)) 50%, black)
+  );
 }
 
 .select select {
@@ -113,6 +130,13 @@ textarea.input {
 
 /* ─── Progress ──────────────────────────────────────────────────────────── */
 
+.progress-wrap {
+  --progress-color: var(--color-primary);
+  display: block;
+  width: 100%;
+  filter: drop-shadow(3px 3px 0 color-mix(in srgb, var(--color-border) 50%, black));
+}
+
 @keyframes progress-slide {
   from {
     left: -30%;
@@ -123,7 +147,6 @@ textarea.input {
 }
 
 .progress {
-  --progress-color: var(--color-primary);
   --progress: 0%;
 
   display: block;
@@ -166,17 +189,20 @@ textarea.input {
   right: auto;
   width: var(--progress);
   max-width: calc(100% - 10px);
-  background-color: var(--progress-color);
+  background-color: var(--progress-color, var(--color-primary));
   transition: width var(--duration-slow) var(--ease-pixel);
 }
 
-.progress-success {
+.progress-success,
+.progress-wrap.progress-success {
   --progress-color: var(--color-success);
 }
-.progress-warning {
+.progress-warning,
+.progress-wrap.progress-warning {
   --progress-color: var(--color-warning);
 }
-.progress-destructive {
+.progress-destructive,
+.progress-wrap.progress-destructive {
   --progress-color: var(--color-destructive);
 }
 
