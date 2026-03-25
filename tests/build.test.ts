@@ -29,4 +29,9 @@ describe('dist/style.css', () => {
     expect(dist).toContain('.radio-indicator')
     expect(dist).toContain('radio-blink')
   })
+
+  it('contains checkbox component', () => {
+    expect(dist).toContain('.checkbox')
+    expect(dist).toContain('.checkbox-indicator')
+  })
 })

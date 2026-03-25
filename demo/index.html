@@ -241,6 +241,47 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
         </details>
       </div>
 
+      <div class="panel panel-centered">
+        <div class="panel-header">Checkbox</div>
+        <div class="panel-body">
+          <div id="checkbox-demo" class="stack" style="gap: calc(var(--spacing) * 4)">
+            <label class="checkbox">
+              <input type="checkbox" checked />
+              <span class="checkbox-indicator"></span>
+              Accept terms
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" />
+              <span class="checkbox-indicator"></span>
+              Subscribe to newsletter
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" disabled />
+              <span class="checkbox-indicator"></span>
+              Disabled option
+            </label>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;label class="checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="checkbox-indicator"&gt;&lt;/span&gt;
+  Accept terms
+&lt;/label&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
       <h2>Layout</h2>
       <div class="panel panel-centered">
         <div class="panel-header">Cards</div>

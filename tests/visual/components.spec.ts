@@ -103,3 +103,22 @@ test('radio disabled', async ({ page }) => {
   await page.locator('#radio-demo .radio').nth(2).hover()
   await expect(page.locator('#radio-demo')).toHaveScreenshot()
 })
+
+test('checkbox default', async ({ page }) => {
+  await expect(page.locator('#checkbox-demo')).toHaveScreenshot()
+})
+
+test('checkbox hover', async ({ page }) => {
+  await page.locator('#checkbox-demo .checkbox').nth(1).hover()
+  await expect(page.locator('#checkbox-demo')).toHaveScreenshot()
+})
+
+test('checkbox focus', async ({ page }) => {
+  await page.locator('#checkbox-demo input[type="checkbox"]').nth(1).focus()
+  await expect(page.locator('#checkbox-demo')).toHaveScreenshot()
+})
+
+test('checkbox disabled', async ({ page }) => {
+  await page.locator('#checkbox-demo .checkbox').nth(2).hover()
+  await expect(page.locator('#checkbox-demo')).toHaveScreenshot()
+})

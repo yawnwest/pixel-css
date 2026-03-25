@@ -1,0 +1,49 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  user-select: none;
+  line-height: 1;
+}
+
+.checkbox input[type='checkbox'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.checkbox-indicator {
+  flex-shrink: 0;
+  align-self: center;
+  translate: 0 -1px;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-foreground);
+  position: relative;
+}
+
+.checkbox-indicator::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-color: var(--color-foreground);
+  opacity: 0;
+}
+
+/* Show when checked */
+.checkbox input[type='checkbox']:checked + .checkbox-indicator::before {
+  opacity: 1;
+}
+
+/* Focus ring only on keyboard navigation */
+.checkbox:has(input[type='checkbox']:focus-visible) {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 4px;
+}
+
+/* Disabled */
+.checkbox:has(input[type='checkbox']:disabled) {
+  opacity: var(--opacity-disabled);
+}

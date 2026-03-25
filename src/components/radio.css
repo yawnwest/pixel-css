@@ -15,7 +15,7 @@
   align-items: center;
   gap: calc(var(--spacing) * 3);
   user-select: none;
-  line-height: var(--leading-tight);
+  line-height: 1;
 }
 
 .radio input[type='radio'] {
@@ -57,13 +57,14 @@
 
 /* Blink on hover or keyboard focus (not when disabled) */
 .radio:not(:has(input[type='radio']:disabled)):hover .radio-indicator,
-.radio:not(:has(input[type='radio']:disabled)):focus-within .radio-indicator {
+.radio:not(:has(input[type='radio']:disabled)):has(input[type='radio']:focus-visible)
+  .radio-indicator {
   opacity: 1;
   animation: radio-blink calc(var(--duration-base) * 8) steps(2) infinite;
 }
 
-/* Focus ring on the label */
-.radio:focus-within {
+/* Focus ring only on keyboard navigation */
+.radio:has(input[type='radio']:focus-visible) {
   outline: 2px solid var(--color-ring);
   outline-offset: 4px;
 }
@@ -76,7 +77,8 @@
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .radio:not(:has(input[type='radio']:disabled)):hover .radio-indicator,
-  .radio:not(:has(input[type='radio']:disabled)):focus-within .radio-indicator {
+  .radio:not(:has(input[type='radio']:disabled)):has(input[type='radio']:focus-visible)
+    .radio-indicator {
     animation: none;
   }
 }

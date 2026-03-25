@@ -85,7 +85,8 @@
   summary,
   a,
   [role='button'],
-  .radio:not(:has(input:disabled)) {
+  .radio:not(:has(input:disabled)),
+  .checkbox:not(:has(input:disabled)) {
     cursor:
       url('./cursors/pointer.png') 5 0,
       pointer;
@@ -93,7 +94,8 @@
 
   :disabled,
   [aria-disabled='true'],
-  .radio:has(input:disabled) {
+  .radio:has(input:disabled),
+  .checkbox:has(input:disabled) {
     cursor:
       url('./cursors/not-allowed.png') 3 4,
       not-allowed;
