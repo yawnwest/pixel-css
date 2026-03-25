@@ -111,6 +111,88 @@ textarea.input {
   opacity: 1;
 }
 
+/* ─── Progress ──────────────────────────────────────────────────────────── */
+
+@keyframes progress-slide {
+  from {
+    left: -30%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.progress {
+  --progress-color: var(--color-primary);
+  --progress: 0%;
+
+  display: block;
+  width: 100%;
+  height: calc(var(--spacing) * 8);
+  background-color: var(--color-surface);
+  clip-path: polygon(
+    var(--pixel-corner) 0px,
+    calc(100% - var(--pixel-corner)) 0px,
+    calc(100% - var(--pixel-corner)) var(--pixel-corner),
+    100% var(--pixel-corner),
+    100% calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) 100%,
+    var(--pixel-corner) 100%,
+    var(--pixel-corner) calc(100% - var(--pixel-corner)),
+    0px calc(100% - var(--pixel-corner)),
+    0px var(--pixel-corner),
+    var(--pixel-corner) var(--pixel-corner)
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.progress::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 3px solid var(--color-border);
+  pointer-events: none;
+}
+
+.progress::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: auto;
+  width: var(--progress);
+  max-width: calc(100% - 10px);
+  background-color: var(--progress-color);
+  transition: width var(--duration-slow) var(--ease-pixel);
+}
+
+.progress-success {
+  --progress-color: var(--color-success);
+}
+.progress-warning {
+  --progress-color: var(--color-warning);
+}
+.progress-destructive {
+  --progress-color: var(--color-destructive);
+}
+
+.progress-indeterminate::after {
+  width: 30%;
+  max-width: 30%;
+  animation: progress-slide calc(var(--duration-base) * 24) var(--ease-pixel) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-indeterminate::after {
+    width: 100%;
+    animation: none;
+  }
+}
+
 /* ─── Checkbox ──────────────────────────────────────────────────────────── */
 
 .checkbox {

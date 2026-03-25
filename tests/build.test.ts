@@ -42,4 +42,13 @@ describe('dist/style.css', () => {
     expect(dist).toContain('.input-destructive')
     expect(dist).toContain('.select')
   })
+
+  it('contains progress component', () => {
+    expect(dist).toContain('.progress')
+    expect(dist).toContain('.progress-success')
+    expect(dist).toContain('.progress-warning')
+    expect(dist).toContain('.progress-destructive')
+    expect(dist).toContain('.progress-indeterminate')
+    expect(dist).toContain('progress-slide')
+  })
 })

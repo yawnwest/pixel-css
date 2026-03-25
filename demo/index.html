@@ -357,6 +357,37 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
       </div>
 
       <div class="panel panel-centered">
+        <div class="panel-header">Progress</div>
+        <div id="progress-demo" class="panel-body">
+          <div class="stack" style="gap: calc(var(--spacing) * 4)">
+            <div class="progress" style="--progress: 60%"></div>
+            <div class="progress progress-success" style="--progress: 80%"></div>
+            <div class="progress progress-warning" style="--progress: 40%"></div>
+            <div class="progress progress-destructive" style="--progress: 20%"></div>
+            <div class="progress progress-indeterminate"></div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="progress" style="--progress: 60%"&gt;&lt;/div&gt;
+&lt;div class="progress progress-success" style="--progress: 80%"&gt;&lt;/div&gt;
+&lt;div class="progress progress-warning" style="--progress: 40%"&gt;&lt;/div&gt;
+&lt;div class="progress progress-destructive" style="--progress: 20%"&gt;&lt;/div&gt;
+&lt;div class="progress progress-indeterminate"&gt;&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
         <div class="panel-header">Radio</div>
         <div class="panel-body">
           <div id="radio-demo" class="stack" style="gap: calc(var(--spacing) * 4)">

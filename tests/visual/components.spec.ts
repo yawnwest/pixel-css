@@ -79,6 +79,13 @@ test('copy button', async ({ page }) => {
   await expect(copyBtn).toHaveScreenshot()
 })
 
+test('progress default', async ({ page }) => {
+  await page.addStyleTag({
+    content: '*, *::before, *::after { animation-play-state: paused !important; }',
+  })
+  await expect(page.locator('#progress-demo')).toHaveScreenshot()
+})
+
 test('radio default', async ({ page }) => {
   await expect(page.locator('#radio-demo')).toHaveScreenshot()
 })
