@@ -201,6 +201,36 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
 
       <h2>Form</h2>
       <div class="panel panel-centered">
+        <div class="panel-header">Input</div>
+        <div id="input-demo" class="panel-body">
+          <div class="stack" style="gap: calc(var(--spacing) * 4); max-width: 20rem">
+            <input class="input" type="text" placeholder="Default" />
+            <input class="input input-success" type="text" placeholder="Success" />
+            <input class="input input-warning" type="text" placeholder="Warning" />
+            <input class="input input-destructive" type="text" placeholder="Destructive" />
+            <input class="input" type="text" placeholder="Disabled" disabled />
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;input class="input" type="text" placeholder="Default"&gt;
+&lt;input class="input input-success" type="text"&gt;
+&lt;input class="input input-warning" type="text"&gt;
+&lt;input class="input input-destructive" type="text"&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
         <div class="panel-header">Radio</div>
         <div class="panel-body">
           <div id="radio-demo" class="stack" style="gap: calc(var(--spacing) * 4)">

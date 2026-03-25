@@ -53,5 +53,6 @@ describe('tokens source', () => {
     expect(css).toContain('./components/text.css')
     expect(css).toContain('./components/radio.css')
     expect(css).toContain('./components/checkbox.css')
+    expect(css).toContain('./components/input.css')
   })
 })

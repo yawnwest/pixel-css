@@ -34,4 +34,11 @@ describe('dist/style.css', () => {
     expect(dist).toContain('.checkbox')
     expect(dist).toContain('.checkbox-indicator')
   })
+
+  it('contains input component', () => {
+    expect(dist).toContain('.input')
+    expect(dist).toContain('.input-success')
+    expect(dist).toContain('.input-warning')
+    expect(dist).toContain('.input-destructive')
+  })
 })

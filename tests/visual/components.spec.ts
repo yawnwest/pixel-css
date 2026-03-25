@@ -122,3 +122,12 @@ test('checkbox disabled', async ({ page }) => {
   await page.locator('#checkbox-demo .checkbox').nth(2).hover()
   await expect(page.locator('#checkbox-demo')).toHaveScreenshot()
 })
+
+test('input default', async ({ page }) => {
+  await expect(page.locator('#input-demo')).toHaveScreenshot()
+})
+
+test('input focus', async ({ page }) => {
+  await page.locator('#input-demo .input').first().focus()
+  await expect(page.locator('#input-demo')).toHaveScreenshot()
+})
