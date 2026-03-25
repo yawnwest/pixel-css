@@ -1,0 +1,153 @@
+@layer base {
+  body {
+    font-family: var(--font-pixel);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: auto;
+    overflow-wrap: break-word;
+  }
+
+  * {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    line-height: var(--leading-tight);
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+  }
+  h2 {
+    font-size: var(--text-3xl);
+  }
+  h3 {
+    font-size: var(--text-2xl);
+  }
+  h4 {
+    font-size: var(--text-xl);
+  }
+  h5 {
+    font-size: var(--text-lg);
+  }
+  h6 {
+    font-size: var(--text-base);
+  }
+
+  p {
+    line-height: var(--leading-normal);
+  }
+
+  pre,
+  code {
+    font-family: var(--font-code);
+    background-color: color-mix(in srgb, var(--color-background) 85%, black);
+  }
+
+  pre {
+    padding: calc(var(--spacing) * 3);
+    overflow-x: auto;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: color-mix(in srgb, var(--color-primary) 70%, black);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Cursors */
+  body,
+  button:not(:disabled),
+  a,
+  [role='button'] {
+    cursor:
+      url('./cursors/default.png') 1 1,
+      default;
+  }
+
+  button:not(:disabled),
+  summary,
+  a,
+  [role='button'],
+  .radio:not(:has(input:disabled)),
+  .checkbox:not(:has(input:disabled)),
+  .select:not(:has(select:disabled)) select {
+    cursor:
+      url('./cursors/pointer.png') 5 0,
+      pointer;
+  }
+
+  :disabled,
+  [aria-disabled='true'],
+  .radio:has(input:disabled),
+  .checkbox:has(input:disabled),
+  .select:has(select:disabled) {
+    cursor:
+      url('./cursors/not-allowed.png') 3 4,
+      not-allowed;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  blockquote,
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='search'],
+  textarea,
+  [contenteditable] {
+    cursor:
+      url('./cursors/text.png') 5 8,
+      text;
+  }
+
+  /* Scrollbar */
+  * {
+    scrollbar-color: color-mix(in srgb, var(--color-border) 40%, white) var(--color-background);
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--color-border) 40%, white);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--color-border) 60%, white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

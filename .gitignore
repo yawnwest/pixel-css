@@ -1,6 +1,6 @@
 .DS_Store
 **.tgz
-dist-playground/
+dist-demo/
 dist/
 node_modules/
 test-results/

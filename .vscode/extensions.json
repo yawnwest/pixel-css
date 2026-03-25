@@ -4,7 +4,6 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "github.vscode-github-actions",
-    "ms-playwright.playwright",
     "svelte.svelte-vscode",
     "usernamehw.errorlens",
     "vitest.explorer"

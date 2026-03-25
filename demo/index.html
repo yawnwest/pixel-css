@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel CSS - Demo</title>
+    <script type="module" src="./main.ts"></script>
+  </head>
+  <body class="p-8">
+    <div class="stack">
+      <h1>Pixel CSS</h1>
+
+      <p>
+        <strong>Pixel CSS</strong> is a CSS library with a pixel-art aesthetic built on Tailwind v4.
+        Find a demonstration of its features below. The code is available on
+        <a href="https://github.com/yawnwest/pixel-css">GitHub</a>.
+      </p>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Dark Mode</div>
+        <div class="panel-body">
+          Pixel CSS has a <button class="btn btn-primary" id="theme-toggle">Light</button> mode.
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;!--- HTML ---&gt;
+&lt;button class="btn btn-primary" id="theme-toggle"&gt;Light&lt;/button&gt;
+
+// JavaScript
+const themeToggle = document.getElementById('theme-toggle')
+
+if (themeToggle) {
+  let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  themeToggle.textContent = isDark ? 'Light' : 'Dark'
+
+  themeToggle.addEventListener('click', () => {
+    isDark = !isDark
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light'
+    themeToggle.textContent = isDark ? 'Light' : 'Dark'
+  })
+}</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Texts</div>
+        <div id="text-demo" class="panel-body">
+          <div class="flex gap-6 flex-wrap items-center">
+            <span class="text-primary">Primary</span>
+            <span class="text-success">Success</span>
+            <span class="text-warning">Warning</span>
+            <span class="text-destructive">Destructive</span>
+            <span class="text-disabled">Disabled</span>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;span class="text-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="text-success"&gt;Success&lt;/span&gt;
+&lt;span class="text-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="text-destructive"&gt;Destructive&lt;/span&gt;
+&lt;span class="text-disabled"&gt;Disabled&lt;/span&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Buttons</div>
+        <div id="button-demo" class="panel-body">
+          <div class="flex gap-4 flex-wrap items-center">
+            <button class="btn">Primary</button>
+            <button class="btn btn-neutral">Neutral</button>
+            <button class="btn btn-destructive">Destructive</button>
+            <button class="btn" disabled>Disabled</button>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;button class="btn"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-neutral"&gt;Neutral&lt;/button&gt;
+&lt;button class="btn btn-destructive"&gt;Destructive&lt;/button&gt;
+&lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <h2>Form</h2>
+      <div class="panel panel-centered">
+        <div class="panel-header">Input</div>
+        <div id="input-demo" class="panel-body">
+          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
+            <input class="input" type="text" placeholder="Default" style="flex: 1 1 10rem" />
+            <input
+              class="input input-success"
+              type="text"
+              placeholder="Success"
+              style="flex: 1 1 10rem"
+            />
+            <input
+              class="input input-warning"
+              type="text"
+              placeholder="Warning"
+              style="flex: 1 1 10rem"
+            />
+            <input
+              class="input input-destructive"
+              type="text"
+              placeholder="Destructive"
+              style="flex: 1 1 10rem"
+            />
+            <input
+              class="input"
+              type="text"
+              placeholder="Disabled"
+              disabled
+              style="flex: 1 1 10rem"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: calc(var(--spacing) * 4);
+              margin-top: calc(var(--spacing) * 4);
+            "
+          >
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Default" />
+            </div>
+            <div class="input-wrap input-success" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Success" />
+            </div>
+            <div class="input-wrap input-warning" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Warning" />
+            </div>
+            <div class="input-wrap input-destructive" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Destructive" />
+            </div>
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <input class="input" type="text" placeholder="Disabled" disabled />
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>
+
+&lt;!-- without shadow --&gt;
+&lt;input class="input" type="text" placeholder="Default"&gt;
+&lt;input class="input input-success" type="text"&gt;
+&lt;input class="input input-warning" type="text"&gt;
+&lt;input class="input input-destructive" type="text"&gt;
+&lt;input class="input" type="text" disabled&gt;
+
+&lt;!-- with shadow --&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;input class="input" type="text" placeholder="Default"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-success"&gt;
+  &lt;input class="input" type="text"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-warning"&gt;
+  &lt;input class="input" type="text"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-destructive"&gt;
+  &lt;input class="input" type="text"&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;input class="input" type="text" disabled&gt;
+&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Textarea</div>
+        <div id="textarea-demo" class="panel-body">
+          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Default"></textarea>
+            </div>
+            <div class="input-wrap input-success" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Success"></textarea>
+            </div>
+            <div class="input-wrap input-warning" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Warning"></textarea>
+            </div>
+            <div class="input-wrap input-destructive" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Destructive"></textarea>
+            </div>
+            <div class="input-wrap" style="flex: 1 1 10rem">
+              <textarea class="input" placeholder="Disabled" disabled></textarea>
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="input-wrap"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-success"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-warning"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap input-destructive"&gt;
+  &lt;textarea class="input"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+&lt;div class="input-wrap"&gt;
+  &lt;textarea class="input" disabled&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Select</div>
+        <div id="select-demo" class="panel-body">
+          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </select>
+            </div>
+            <div class="select input-success" style="flex: 1 1 10rem">
+              <select class="input">
+                <option>Success</option>
+              </select>
+            </div>
+            <div class="select input-warning" style="flex: 1 1 10rem">
+              <select class="input">
+                <option>Warning</option>
+              </select>
+            </div>
+            <div class="select input-destructive" style="flex: 1 1 10rem">
+              <select class="input">
+                <option>Destructive</option>
+              </select>
+            </div>
+            <div class="select" style="flex: 1 1 10rem">
+              <select class="input" disabled>
+                <option>Disabled</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="select"&gt;
+  &lt;select class="input"&gt;
+    &lt;option&gt;Option 1&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="select"&gt;
+  &lt;select class="input input-success"&gt;...&lt;/select&gt;
+&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Progress</div>
+        <div id="progress-demo" class="panel-body">
+          <div class="stack" style="gap: calc(var(--spacing) * 4)">
+            <div class="progress-wrap">
+              <div class="progress" style="--progress: 60%"></div>
+            </div>
+            <div class="progress-wrap progress-success">
+              <div class="progress" style="--progress: 80%"></div>
+            </div>
+            <div class="progress-wrap progress-warning">
+              <div class="progress" style="--progress: 40%"></div>
+            </div>
+            <div class="progress-wrap progress-destructive">
+              <div class="progress" style="--progress: 20%"></div>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress progress-indeterminate"></div>
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="progress-wrap"&gt;
+  &lt;div class="progress" style="--progress: 60%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap progress-success"&gt;
+  &lt;div class="progress" style="--progress: 80%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap progress-warning"&gt;
+  &lt;div class="progress" style="--progress: 40%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap progress-destructive"&gt;
+  &lt;div class="progress" style="--progress: 20%"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="progress-wrap"&gt;
+  &lt;div class="progress progress-indeterminate"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Radio</div>
+        <div class="panel-body">
+          <div id="radio-demo" class="stack" style="gap: calc(var(--spacing) * 4)">
+            <label class="radio">
+              <input type="radio" name="demo-radio" value="yes" checked />
+              <span class="radio-indicator"></span>
+              Yes
+            </label>
+            <label class="radio">
+              <input type="radio" name="demo-radio" value="no" />
+              <span class="radio-indicator"></span>
+              No
+            </label>
+            <label class="radio">
+              <input type="radio" name="demo-radio" value="maybe" disabled />
+              <span class="radio-indicator"></span>
+              Maybe
+            </label>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;label class="radio"&gt;
+  &lt;input type="radio" name="group" value="yes"&gt;
+  &lt;span class="radio-indicator"&gt;&lt;/span&gt;
+  Yes
+&lt;/label&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Checkbox</div>
+        <div class="panel-body">
+          <div id="checkbox-demo" class="stack" style="gap: calc(var(--spacing) * 4)">
+            <label class="checkbox">
+              <input type="checkbox" checked />
+              <span class="checkbox-indicator"></span>
+              Accept terms
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" />
+              <span class="checkbox-indicator"></span>
+              Subscribe to newsletter
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" disabled />
+              <span class="checkbox-indicator"></span>
+              Disabled option
+            </label>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;label class="checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span class="checkbox-indicator"&gt;&lt;/span&gt;
+  Accept terms
+&lt;/label&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <h2>Layout</h2>
+      <div class="panel panel-centered">
+        <div class="panel-header">Cards</div>
+        <div class="panel-body">
+          <div id="card-demo" class="card max-w-xs">
+            <h5>Card Title</h5>
+            <p>This is some content inside a card.</p>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="card"&gt;
+  &lt;h5&gt;Card Title&lt;/h5&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Stack</div>
+        <div id="stack-demo" class="panel-body">
+          <div class="stack" style="max-width: 20rem">
+            <p>Stack item one</p>
+            <p>Stack item two</p>
+            <p>Stack item three</p>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="stack"&gt;
+  &lt;p&gt;Stack item one&lt;/p&gt;
+  &lt;p&gt;Stack item two&lt;/p&gt;
+  &lt;p&gt;Stack item three&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <h3>Panels</h3>
+      <div class="flex gap-8 flex-wrap items-start">
+        <div class="panel" style="width: 20rem">
+          <div class="panel-header">Settings</div>
+          <div class="panel-body">
+            <p>This is a panel with text.</p>
+          </div>
+        </div>
+        <div class="panel panel-centered" style="width: 20rem">
+          <div class="panel-header">Centered</div>
+          <div class="panel-body">
+            <p>This panel has a centered header and a centered footer.</p>
+          </div>
+          <details class="panel-footer">
+            <summary class="btn">
+              <span class="panel-toggle-close">+</span>
+              <span class="panel-toggle-open">-</span>
+            </summary>
+            <div class="panel-footer-body">
+              <div class="panel-extra">
+                <pre><code>&lt;div class="panel panel-centered"&gt;
+  &lt;div class="panel-header"&gt;Centered&lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;details class="panel-footer"&gt;
+    &lt;summary class="btn"&gt;
+      &lt;span class="panel-toggle-close"&gt;+&lt;/span&gt;
+      &lt;span class="panel-toggle-open"&gt;-&lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;div class="panel-footer-body"&gt;
+      &lt;p&gt;Footer content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                <div class="flex justify-end mt-2">
+                  <button class="btn btn-neutral" data-copy-btn>copy</button>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="panel" style="width: 42rem">
+        <div class="panel-header">Copy Button</div>
+        <div class="panel-body">
+          <div class="panel-extra">
+            This panel has a copy button and a details area which provides documentation.
+            <pre><code>Some text to copy</code></pre>
+            <div class="flex justify-end mt-2">
+              <button class="btn btn-neutral" data-copy-btn>copy</button>
+            </div>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="panel-extra"&gt;
+  &lt;pre&gt;&lt;code&gt;Some text to copy&lt;/code&gt;&lt;/pre&gt;
+  &lt;div class="flex justify-end mt-2"&gt;
+    &lt;button class="btn btn-neutral" data-copy-btn&gt;copy&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const code = btn.closest('.panel-extra')!.querySelector('code')!.textContent ?? ''
+    navigator.clipboard.writeText(code)
+    btn.textContent = 'copied!'
+    setTimeout(() => {
+      btn.textContent = 'copy'
+    }, 1500)
+  })
+})</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </body>
+</html>

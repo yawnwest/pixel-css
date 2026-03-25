@@ -1,0 +1,83 @@
+@theme {
+  /* Colors */
+  --color-*: initial;
+  --color-background: #ffffff; /* page background */
+  --color-surface: #e8e8e8; /* card/panel backgrounds */
+  --color-foreground: #1e1e3a; /* default text */
+  --color-primary: #0078f8; /* main accent, CTAs — NES bright blue */
+  --color-neutral: #888888; /* neutral actions */
+  --color-success: #00a800; /* success — NES green */
+  --color-warning: #f8b800; /* warning — NES yellow */
+  --color-destructive: #d82800; /* destructive actions — NES red */
+  --color-ring: #60b4fc; /* focus rings — NES light blue */
+  --color-border: #222222; /* borders, scrollbars and dividers */
+
+  /* Typography */
+  --font-*: initial;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-code: ui-monospace, monospace;
+  --text-*: initial;
+  --text-xs: 0.5rem; /* 8px */
+  --text-sm: 0.75rem; /* 12px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.25rem; /* 20px */
+  --text-xl: 1.5rem; /* 24px */
+  --text-2xl: 2rem; /* 32px */
+  --text-3xl: 2.5rem; /* 40px */
+  --text-4xl: 3rem; /* 48px */
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
+  --leading-loose: 2;
+
+  /* Spacing */
+  --spacing: 0.25rem;
+
+  /* Borders */
+  --pixel-corner: 3px;
+  --pixel-clip: polygon(
+    var(--pixel-corner) 0px,
+    calc(100% - var(--pixel-corner)) 0px,
+    calc(100% - var(--pixel-corner)) var(--pixel-corner),
+    100% var(--pixel-corner),
+    100% calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) calc(100% - var(--pixel-corner)),
+    calc(100% - var(--pixel-corner)) 100%,
+    var(--pixel-corner) 100%,
+    var(--pixel-corner) calc(100% - var(--pixel-corner)),
+    0px calc(100% - var(--pixel-corner)),
+    0px var(--pixel-corner),
+    var(--pixel-corner) var(--pixel-corner)
+  );
+
+  /* States */
+  --opacity-disabled: 0.4;
+
+  /* Transitions */
+  --duration-*: initial;
+  --duration-base: 50ms;
+  --duration-slow: 150ms;
+  --ease-pixel: steps(4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0f0f1e;
+    --color-surface: #1e1e3a;
+    --color-foreground: #f4f4ff;
+    --color-border: #888888;
+  }
+}
+
+[data-theme='dark'] {
+  --color-background: #0f0f1e;
+  --color-surface: #1e1e3a;
+  --color-foreground: #f4f4ff;
+  --color-border: #888888;
+}
+
+[data-theme='light'] {
+  --color-background: #ffffff;
+  --color-surface: #e8e8e8;
+  --color-foreground: #1e1e3a;
+  --color-border: #222222;
+}
