@@ -44,3 +44,19 @@
   --duration-slow: 150ms;
   --ease-pixel: steps(4);
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0f0f1e;
+    --color-surface: #1e1e3a;
+    --color-foreground: #f4f4ff;
+    --color-border: #888888;
+  }
+}
+
+[data-theme='dark'] {
+  --color-background: #0f0f1e;
+  --color-surface: #1e1e3a;
+  --color-foreground: #f4f4ff;
+  --color-border: #888888;
+}

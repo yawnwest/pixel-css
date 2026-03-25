@@ -9,20 +9,51 @@
   <body class="p-8">
     <div class="stack">
       <h1>Pixel CSS</h1>
-      <a href=".">This is my Link</a>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget semper nisl, sit amet
-        tempor dui.
+        <strong>Pixel CSS</strong> is a CSS library with a pixel-art aesthetic built on Tailwind v4.
+        Find a demonstration of its features below. The code is available on
+        <a href="https://github.com/yawnwest/pixel-css">GitHub</a>.
       </p>
 
-      <p>
-        Aliquam accumsan lacus felis, in mattis nibh tincidunt nec. Donec auctor blandit augue a
-        accumsan. Phasellus ac turpis vel tortor sodales fermentum. Proin quis pharetra sem.
-      </p>
+      <div class="panel panel-centered">
+        <div class="panel-header">Dark Mode</div>
+        <div class="panel-body">
+          Pixel CSS has a <button class="btn btn-neutral" id="theme-toggle">Dark</button> mode.
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;!--- HTML ---&gt;
+&lt;button class="btn btn-neutral" id="theme-toggle"&gt;Dark&lt;/button&gt;
 
-      <div class="panel">
-        <div class="panel-header">Text</div>
+// JavaScript
+const themeToggle = document.getElementById('theme-toggle')
+
+themeToggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.dataset.theme === 'dark'
+  if (isDark) {
+    delete document.documentElement.dataset.theme
+    themeToggle.textContent = 'Dark'
+  } else {
+    document.documentElement.dataset.theme = 'dark'
+    themeToggle.textContent = 'Light'
+  }
+})</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="panel panel-centered">
+        <div class="panel-header">Texts</div>
         <div id="text-demo" class="panel-body">
           <div class="flex gap-6 flex-wrap items-center">
             <span class="text-primary">Primary</span>
@@ -52,7 +83,7 @@
         </details>
       </div>
 
-      <div class="panel">
+      <div class="panel panel-centered">
         <div class="panel-header">Buttons</div>
         <div id="button-demo" class="panel-body">
           <div class="flex gap-4 flex-wrap items-center">
@@ -86,7 +117,13 @@
         <div class="panel" style="width: 20rem">
           <div class="panel-header">Settings</div>
           <div class="panel-body">
-            <p>Some content inside the panel body.</p>
+            <p>This is a panel with text.</p>
+          </div>
+        </div>
+        <div class="panel panel-centered" style="width: 20rem">
+          <div class="panel-header">Centered</div>
+          <div class="panel-body">
+            <p>This panel has a centered header and a centered footer.</p>
           </div>
           <details class="panel-footer">
             <summary class="btn">
@@ -94,36 +131,130 @@
               <span class="panel-toggle-open">-</span>
             </summary>
             <div class="panel-footer-body">
-              <p>Hidden footer content goes here.</p>
+              <div class="panel-extra">
+                <pre><code>&lt;div class="panel panel-centered"&gt;
+  &lt;div class="panel-header"&gt;Centered&lt;/div&gt;
+  &lt;div class="panel-body"&gt;
+    &lt;p&gt;Content&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;details class="panel-footer"&gt;
+    &lt;summary class="btn"&gt;
+      &lt;span class="panel-toggle-close"&gt;+&lt;/span&gt;
+      &lt;span class="panel-toggle-open"&gt;-&lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;div class="panel-footer-body"&gt;
+      &lt;p&gt;Footer content&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                <div class="flex justify-end mt-2">
+                  <button class="btn btn-neutral" data-copy-btn>copy</button>
+                </div>
+              </div>
             </div>
           </details>
         </div>
-        <div class="panel panel-centered" style="width: 20rem">
-          <div class="panel-header">Centered</div>
-          <div class="panel-body">
-            <p>This panel has a centered header.</p>
+      </div>
+
+      <div class="panel" style="width: 42rem">
+        <div class="panel-header">Copy Button</div>
+        <div class="panel-body">
+          <div class="panel-extra">
+            This panel has a copy button and a details area which provides documentation.
+            <pre><code>Some text to copy</code></pre>
+            <div class="flex justify-end mt-2">
+              <button class="btn btn-neutral" data-copy-btn>copy</button>
+            </div>
           </div>
         </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="panel-extra"&gt;
+  &lt;pre&gt;&lt;code&gt;Some text to copy&lt;/code&gt;&lt;/pre&gt;
+  &lt;div class="flex justify-end mt-2"&gt;
+    &lt;button class="btn btn-neutral" data-copy-btn&gt;copy&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const code = btn.closest('.panel-extra')!.querySelector('code')!.textContent ?? ''
+    navigator.clipboard.writeText(code)
+    btn.textContent = 'copied!'
+    setTimeout(() => {
+      btn.textContent = 'copy'
+    }, 1500)
+  })
+})</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
 
-      <h2>Cards</h2>
-      <div id="stack-demo" class="stack" style="max-width: 20rem">
-        <p>Stack item one</p>
-        <p>Stack item two</p>
-        <p>Stack item three</p>
+      <h2>Layout</h2>
+      <div class="panel panel-centered">
+        <div class="panel-header">Cards</div>
+        <div class="panel-body">
+          <div id="card-demo" class="card max-w-xs">
+            <h5>Card Title</h5>
+            <p>This is some content inside a card.</p>
+          </div>
+        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="card"&gt;
+  &lt;h5&gt;Card Title&lt;/h5&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
 
-      <div class="flex gap-4 flex-wrap">
-        <div id="card-demo" class="card max-w-xs">
-          <h5>Card Title</h5>
-          <p>This is some content inside a card.</p>
-          <a href=".">A link inside a card</a>
+      <div class="panel panel-centered">
+        <div class="panel-header">Stack</div>
+        <div id="stack-demo" class="panel-body">
+          <div class="stack" style="max-width: 20rem">
+            <p>Stack item one</p>
+            <p>Stack item two</p>
+            <p>Stack item three</p>
+          </div>
         </div>
-        <div class="card max-w-xs">
-          <h5>Another Card</h5>
-          <p>Cards can sit next to each other.</p>
-          <a href=".">Another link</a>
-        </div>
+        <details class="panel-footer">
+          <summary class="btn">
+            <span class="panel-toggle-close">+</span>
+            <span class="panel-toggle-open">-</span>
+          </summary>
+          <div class="panel-footer-body">
+            <div class="panel-extra">
+              <pre><code>&lt;div class="stack"&gt;
+  &lt;p&gt;Stack item one&lt;/p&gt;
+  &lt;p&gt;Stack item two&lt;/p&gt;
+  &lt;p&gt;Stack item three&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+              <div class="flex justify-end mt-2">
+                <button class="btn btn-neutral" data-copy-btn>copy</button>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
     </div>
   </body>

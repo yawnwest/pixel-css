@@ -1,8 +1,16 @@
 import '../src/index.css'
 
-document.getElementById('theme-toggle')?.addEventListener('click', () => {
-  const current = document.documentElement.dataset.theme
-  document.documentElement.dataset.theme = current === 'dark' ? 'light' : 'dark'
+const themeToggle = document.getElementById('theme-toggle')
+
+themeToggle?.addEventListener('click', () => {
+  const isDark = document.documentElement.dataset.theme === 'dark'
+  if (isDark) {
+    delete document.documentElement.dataset.theme
+    themeToggle.textContent = 'Dark'
+  } else {
+    document.documentElement.dataset.theme = 'dark'
+    themeToggle.textContent = 'Light'
+  }
 })
 
 document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
