@@ -45,6 +45,11 @@
   opacity: var(--opacity-disabled);
 }
 
+textarea.input {
+  resize: none;
+  min-height: calc(var(--spacing) * 24);
+}
+
 .input-success {
   --input-color: var(--color-success);
 }
