@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-03-26
+
+### Fixed
+
+- Added CSS import in index.js
+
 ## [0.4.1] - 2026-03-26
 
 ### Changed
@@ -40,5 +46,7 @@
 - Some basic styling
 - A sample playground
 
-[0.4.0]: https://github.com/yawnwest/pixel-css/releases/tag/v0.4.0
+[0.4.2]: https://github.com/yawnwest/pixel-css/compare/v0.4.1...v0.4.2
+[0.4.1]: https://github.com/yawnwest/pixel-css/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/yawnwest/pixel-css/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/yawnwest/pixel-css/releases/tag/v0.3.0
