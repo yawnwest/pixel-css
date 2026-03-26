@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => ({
       },
       sourcemap: true,
       cssCodeSplit: false,
-      rollupOptions: {
+      rolldownOptions: {
         output: {
           assetFileNames: (info) =>
             info.names?.[0]?.endsWith('.css') ? 'style.css' : 'cursors/[name][extname]',

@@ -1,4 +1,4 @@
-import '../src/index.css'
+import '../src/index'
 
 const themeToggle = document.getElementById('theme-toggle')
 
