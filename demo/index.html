@@ -103,7 +103,10 @@ if (themeToggle) {
               <pre><code>&lt;button class="btn"&gt;Primary&lt;/button&gt;
 &lt;button class="btn btn-neutral"&gt;Neutral&lt;/button&gt;
 &lt;button class="btn btn-destructive"&gt;Destructive&lt;/button&gt;
-&lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+&lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;
+
+&lt;!-- For touch press animations, import the JS entry point --&gt;
+&lt;!-- import '@yawnwest/pixel-css' --&gt;</code></pre>
               <div class="flex justify-end mt-2">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
@@ -509,13 +512,14 @@ if (themeToggle) {
 
       <h3>Panels</h3>
       <div class="flex gap-8 flex-wrap items-start">
-        <div class="panel" style="width: 20rem">
+        <div class="panel">
           <div class="panel-header">Settings</div>
           <div class="panel-body">
             <p>This is a panel with text.</p>
           </div>
         </div>
-        <div class="panel panel-centered" style="width: 20rem">
+
+        <div class="panel panel-centered">
           <div class="panel-header">Centered</div>
           <div class="panel-body">
             <p>This panel has a centered header and a centered footer.</p>
@@ -551,7 +555,7 @@ if (themeToggle) {
         </div>
       </div>
 
-      <div class="panel" style="width: 42rem">
+      <div class="panel">
         <div class="panel-header">Copy Button</div>
         <div class="panel-body">
           <div class="panel-extra">

@@ -14,7 +14,13 @@ npm install @yawnwest/pixel-css
 
 ## Usage
 
-Import the stylesheet once in your project:
+Import the JS entry point to get CSS and touch support bundled together:
+
+```js
+import '@yawnwest/pixel-css'
+```
+
+Or import only the stylesheet if you don't need touch support:
 
 ```js
 import '@yawnwest/pixel-css/style.css'
@@ -39,6 +45,7 @@ This gives you Tailwind's preflight reset, all Tailwind utility classes, and the
 - **CSS reset** — Tailwind preflight with pixelated image rendering
 - **Typography** — headings, paragraphs, links, and code using Press Start 2P
 - **Dark mode** — automatic via `prefers-color-scheme`, or manual via `data-theme="dark"` / `data-theme="light"`
+- **Buttons** — press animation with instant touch feedback on mobile via a small JS module
 - **Size-constrained** — CSS bundle capped at 25 KB
 
 ## Dark mode
@@ -60,6 +67,7 @@ Dark mode activates automatically based on the user's system preference. You can
 ```bash
 pnpm install
 pnpm dev          # Start demo at http://localhost:5173
+pnpm serve        # Start demo accessible on the local network (for mobile testing)
 pnpm build        # Build the library
 pnpm test         # Run unit tests
 pnpm lint         # Lint

@@ -47,11 +47,18 @@
   }
 }
 
-.btn:active:not(:disabled) {
+.btn-pressing,
+.btn-pressing::after {
+  transition: none;
+}
+
+.btn:active:not(:disabled),
+.btn-pressing {
   translate: var(--btn-shadow-offset) var(--btn-shadow-offset);
 }
 
-.btn:active:not(:disabled)::after {
+.btn:active:not(:disabled)::after,
+.btn-pressing::after {
   translate: 0px 0px;
 }
 
