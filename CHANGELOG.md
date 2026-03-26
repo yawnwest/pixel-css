@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [0.4.1] - 2026-03-25
+## [0.4.1] - 2026-03-26
 
 ### Changed
 
@@ -11,6 +11,8 @@
 ### Fixed
 
 - Removed mouse over effects for buttons and radios on touchscreens
+- Buttons have now visible click effect on touchscreens
+- Button in panel does not move anymore on click in safari
 
 ## [0.4.0] - 2026-03-25
 
