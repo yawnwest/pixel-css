@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
-import tailwindcss from '@tailwindcss/vite'
 import type { Plugin } from 'vite'
 
 function injectCssImport(): Plugin {
@@ -21,7 +20,7 @@ function injectCssImport(): Plugin {
 }
 
 export default defineConfig(({ mode }) => ({
-  plugins: [tailwindcss(), ...(mode !== 'demo' ? [injectCssImport()] : [])],
+  plugins: mode !== 'demo' ? [injectCssImport()] : [],
   root: mode === 'demo' ? 'demo' : undefined,
   base: mode === 'demo' ? '/pixel-css/' : '/',
   server: {
@@ -34,7 +33,6 @@ export default defineConfig(({ mode }) => ({
     ...(mode !== 'demo' && {
       lib: {
         entry: resolve(__dirname, 'src/index.ts'),
-        name: 'YawnwestCssLibraryTest',
         fileName: (format) => `index.${format === 'es' ? 'js' : 'cjs'}`,
         formats: ['es', 'cjs'],
       },

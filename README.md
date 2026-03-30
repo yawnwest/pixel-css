@@ -1,6 +1,6 @@
 # pixel-css
 
-A CSS library with a pixel-art aesthetic built on Tailwind CSS v4.
+A framework-agnostic CSS library with a pixel-art aesthetic.
 
 ## Demo
 
@@ -36,13 +36,12 @@ Or load it directly via CDN — no build step required:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yawnwest/pixel-css/dist/style.css" />
 ```
 
-This gives you Tailwind's preflight reset, all Tailwind utility classes, and the pixel-art theme tokens.
+This gives you the CSS reset, component styles, and the pixel-art theme tokens.
 
 ## Features
 
-- **Tailwind utilities** — full set of Tailwind CSS v4 utility classes included
-- **Design tokens** — semantic color palette, typography scale, spacing, shadows, and transitions via `@theme`
-- **CSS reset** — Tailwind preflight with pixelated image rendering
+- **Design tokens** — semantic color palette, typography scale, spacing, and transitions via CSS custom properties
+- **CSS reset** — minimal cross-browser reset with pixelated image rendering
 - **Typography** — headings, paragraphs, links, and code using Press Start 2P
 - **Dark mode** — automatic via `prefers-color-scheme`, or manual via `data-theme="dark"` / `data-theme="light"`
 - **Buttons** — press animation with instant touch feedback on mobile via a small JS module

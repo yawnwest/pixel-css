@@ -1,7 +1,5 @@
-@layer components {
-  .stack {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--spacing) * 6);
-  }
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 6);
 }

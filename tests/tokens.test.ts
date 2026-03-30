@@ -57,7 +57,8 @@ describe('tokens source', () => {
     expect(theme).toContain('--leading-loose')
   })
 
-  it('imports theme and base', () => {
+  it('imports reset, theme and base', () => {
+    expect(css).toContain('./reset.css')
     expect(css).toContain('./theme.css')
     expect(css).toContain('./base.css')
   })

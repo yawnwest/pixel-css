@@ -1,5 +1,4 @@
-@import 'tailwindcss/preflight' layer(base);
-@import 'tailwindcss/utilities' layer(utilities);
+@import './reset.css';
 @import '@fontsource/press-start-2p/latin.css';
 
 @import './theme.css';

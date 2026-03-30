@@ -1,6 +1,5 @@
-@theme {
+:root {
   /* Colors */
-  --color-*: initial;
   --color-background: #ffffff; /* page background */
   --color-surface: #e8e8e8; /* card/panel backgrounds */
   --color-foreground: #1e1e3a; /* default text */
@@ -13,10 +12,8 @@
   --color-border: #222222; /* borders, scrollbars and dividers */
 
   /* Typography */
-  --font-*: initial;
   --font-pixel: 'Press Start 2P', monospace;
   --font-code: ui-monospace, monospace;
-  --text-*: initial;
   --text-xs: 0.5rem; /* 8px */
   --text-sm: 0.75rem; /* 12px */
   --text-base: 1rem; /* 16px */
@@ -53,7 +50,6 @@
   --opacity-disabled: 0.4;
 
   /* Transitions */
-  --duration-*: initial;
   --duration-base: 50ms;
   --duration-slow: 150ms;
   --ease-pixel: steps(4);

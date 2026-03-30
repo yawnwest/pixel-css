@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "bradlc.vscode-tailwind-css",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "github.vscode-github-actions",
