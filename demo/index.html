@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixel CSS - Demo</title>
+    <link rel="stylesheet" href="./demo.css" />
     <script type="module" src="./main.ts"></script>
   </head>
-  <body class="p-8">
+  <body>
     <div class="stack">
       <h1>Pixel CSS</h1>
 
       <p>
-        <strong>Pixel CSS</strong> is a CSS library with a pixel-art aesthetic built on Tailwind v4.
+        <strong>Pixel CSS</strong> is a framework-agnostic CSS library with a pixel-art aesthetic.
         Find a demonstration of its features below. The code is available on
         <a href="https://github.com/yawnwest/pixel-css">GitHub</a>.
       </p>
@@ -44,7 +45,7 @@ if (themeToggle) {
     themeToggle.textContent = isDark ? 'Light' : 'Dark'
   })
 }</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -55,7 +56,7 @@ if (themeToggle) {
       <div class="panel panel-centered">
         <div class="panel-header">Texts</div>
         <div id="text-demo" class="panel-body">
-          <div class="flex gap-6 flex-wrap items-center">
+          <div class="demo-row">
             <span class="text-primary">Primary</span>
             <span class="text-success">Success</span>
             <span class="text-warning">Warning</span>
@@ -75,7 +76,7 @@ if (themeToggle) {
 &lt;span class="text-warning"&gt;Warning&lt;/span&gt;
 &lt;span class="text-destructive"&gt;Destructive&lt;/span&gt;
 &lt;span class="text-disabled"&gt;Disabled&lt;/span&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -86,7 +87,7 @@ if (themeToggle) {
       <div class="panel panel-centered">
         <div class="panel-header">Buttons</div>
         <div id="button-demo" class="panel-body">
-          <div class="flex gap-4 flex-wrap items-center">
+          <div class="demo-row">
             <button class="btn">Primary</button>
             <button class="btn btn-neutral">Neutral</button>
             <button class="btn btn-destructive">Destructive</button>
@@ -107,7 +108,7 @@ if (themeToggle) {
 
 &lt;!-- For touch press animations, import the JS entry point --&gt;
 &lt;!-- import '@yawnwest/pixel-css' --&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -119,55 +120,27 @@ if (themeToggle) {
       <div class="panel panel-centered">
         <div class="panel-header">Input</div>
         <div id="input-demo" class="panel-body">
-          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
-            <input class="input" type="text" placeholder="Default" style="flex: 1 1 10rem" />
-            <input
-              class="input input-success"
-              type="text"
-              placeholder="Success"
-              style="flex: 1 1 10rem"
-            />
-            <input
-              class="input input-warning"
-              type="text"
-              placeholder="Warning"
-              style="flex: 1 1 10rem"
-            />
-            <input
-              class="input input-destructive"
-              type="text"
-              placeholder="Destructive"
-              style="flex: 1 1 10rem"
-            />
-            <input
-              class="input"
-              type="text"
-              placeholder="Disabled"
-              disabled
-              style="flex: 1 1 10rem"
-            />
+          <div class="demo-input-row">
+            <input class="input" type="text" placeholder="Default" />
+            <input class="input input-success" type="text" placeholder="Success" />
+            <input class="input input-warning" type="text" placeholder="Warning" />
+            <input class="input input-destructive" type="text" placeholder="Destructive" />
+            <input class="input" type="text" placeholder="Disabled" disabled />
           </div>
-          <div
-            style="
-              display: flex;
-              flex-wrap: wrap;
-              gap: calc(var(--spacing) * 4);
-              margin-top: calc(var(--spacing) * 4);
-            "
-          >
-            <div class="input-wrap" style="flex: 1 1 10rem">
+          <div class="demo-input-row">
+            <div class="input-wrap">
               <input class="input" type="text" placeholder="Default" />
             </div>
-            <div class="input-wrap input-success" style="flex: 1 1 10rem">
+            <div class="input-wrap input-success">
               <input class="input" type="text" placeholder="Success" />
             </div>
-            <div class="input-wrap input-warning" style="flex: 1 1 10rem">
+            <div class="input-wrap input-warning">
               <input class="input" type="text" placeholder="Warning" />
             </div>
-            <div class="input-wrap input-destructive" style="flex: 1 1 10rem">
+            <div class="input-wrap input-destructive">
               <input class="input" type="text" placeholder="Destructive" />
             </div>
-            <div class="input-wrap" style="flex: 1 1 10rem">
+            <div class="input-wrap">
               <input class="input" type="text" placeholder="Disabled" disabled />
             </div>
           </div>
@@ -180,7 +153,6 @@ if (themeToggle) {
           <div class="panel-footer-body">
             <div class="panel-extra">
               <pre><code>
-
 &lt;!-- without shadow --&gt;
 &lt;input class="input" type="text" placeholder="Default"&gt;
 &lt;input class="input input-success" type="text"&gt;
@@ -204,7 +176,7 @@ if (themeToggle) {
 &lt;div class="input-wrap"&gt;
   &lt;input class="input" type="text" disabled&gt;
 &lt;/div&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -215,20 +187,20 @@ if (themeToggle) {
       <div class="panel panel-centered">
         <div class="panel-header">Textarea</div>
         <div id="textarea-demo" class="panel-body">
-          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
-            <div class="input-wrap" style="flex: 1 1 10rem">
+          <div class="demo-input-row">
+            <div class="input-wrap">
               <textarea class="input" placeholder="Default"></textarea>
             </div>
-            <div class="input-wrap input-success" style="flex: 1 1 10rem">
+            <div class="input-wrap input-success">
               <textarea class="input" placeholder="Success"></textarea>
             </div>
-            <div class="input-wrap input-warning" style="flex: 1 1 10rem">
+            <div class="input-wrap input-warning">
               <textarea class="input" placeholder="Warning"></textarea>
             </div>
-            <div class="input-wrap input-destructive" style="flex: 1 1 10rem">
+            <div class="input-wrap input-destructive">
               <textarea class="input" placeholder="Destructive"></textarea>
             </div>
-            <div class="input-wrap" style="flex: 1 1 10rem">
+            <div class="input-wrap">
               <textarea class="input" placeholder="Disabled" disabled></textarea>
             </div>
           </div>
@@ -255,7 +227,7 @@ if (themeToggle) {
 &lt;div class="input-wrap"&gt;
   &lt;textarea class="input" disabled&gt;&lt;/textarea&gt;
 &lt;/div&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -266,30 +238,30 @@ if (themeToggle) {
       <div class="panel panel-centered">
         <div class="panel-header">Select</div>
         <div id="select-demo" class="panel-body">
-          <div style="display: flex; flex-wrap: wrap; gap: calc(var(--spacing) * 4)">
-            <div class="select" style="flex: 1 1 10rem">
+          <div class="demo-input-row">
+            <div class="select">
               <select class="input">
                 <option>Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
               </select>
             </div>
-            <div class="select input-success" style="flex: 1 1 10rem">
+            <div class="select input-success">
               <select class="input">
                 <option>Success</option>
               </select>
             </div>
-            <div class="select input-warning" style="flex: 1 1 10rem">
+            <div class="select input-warning">
               <select class="input">
                 <option>Warning</option>
               </select>
             </div>
-            <div class="select input-destructive" style="flex: 1 1 10rem">
+            <div class="select input-destructive">
               <select class="input">
                 <option>Destructive</option>
               </select>
             </div>
-            <div class="select" style="flex: 1 1 10rem">
+            <div class="select">
               <select class="input" disabled>
                 <option>Disabled</option>
               </select>
@@ -311,7 +283,7 @@ if (themeToggle) {
 &lt;div class="select"&gt;
   &lt;select class="input input-success"&gt;...&lt;/select&gt;
 &lt;/div&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -362,7 +334,7 @@ if (themeToggle) {
 &lt;div class="progress-wrap"&gt;
   &lt;div class="progress progress-indeterminate"&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -403,7 +375,7 @@ if (themeToggle) {
   &lt;span class="radio-indicator"&gt;&lt;/span&gt;
   Yes
 &lt;/label&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -444,7 +416,7 @@ if (themeToggle) {
   &lt;span class="checkbox-indicator"&gt;&lt;/span&gt;
   Accept terms
 &lt;/label&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -456,7 +428,7 @@ if (themeToggle) {
       <div class="panel panel-centered">
         <div class="panel-header">Cards</div>
         <div class="panel-body">
-          <div id="card-demo" class="card max-w-xs">
+          <div id="card-demo" class="card">
             <h5>Card Title</h5>
             <p>This is some content inside a card.</p>
           </div>
@@ -473,7 +445,7 @@ if (themeToggle) {
   &lt;p&gt;Content&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -502,7 +474,7 @@ if (themeToggle) {
   &lt;p&gt;Stack item two&lt;/p&gt;
   &lt;p&gt;Stack item three&lt;/p&gt;
 &lt;/div&gt;</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>
@@ -511,7 +483,7 @@ if (themeToggle) {
       </div>
 
       <h3>Panels</h3>
-      <div class="flex gap-8 flex-wrap items-start">
+      <div class="demo-panels">
         <div class="panel">
           <div class="panel-header">Settings</div>
           <div class="panel-body">
@@ -546,7 +518,7 @@ if (themeToggle) {
     &lt;/div&gt;
   &lt;/details&gt;
 &lt;/div&gt;</code></pre>
-                <div class="flex justify-end mt-2">
+                <div class="copy-actions">
                   <button class="btn btn-neutral" data-copy-btn>copy</button>
                 </div>
               </div>
@@ -561,7 +533,7 @@ if (themeToggle) {
           <div class="panel-extra">
             This panel has a copy button and a details area which provides documentation.
             <pre><code>Some text to copy</code></pre>
-            <div class="flex justify-end mt-2">
+            <div class="copy-actions">
               <button class="btn btn-neutral" data-copy-btn>copy</button>
             </div>
           </div>
@@ -575,7 +547,7 @@ if (themeToggle) {
             <div class="panel-extra">
               <pre><code>&lt;div class="panel-extra"&gt;
   &lt;pre&gt;&lt;code&gt;Some text to copy&lt;/code&gt;&lt;/pre&gt;
-  &lt;div class="flex justify-end mt-2"&gt;
+  &lt;div class="copy-actions"&gt;
     &lt;button class="btn btn-neutral" data-copy-btn&gt;copy&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -590,7 +562,7 @@ document.querySelectorAll('[data-copy-btn]').forEach((btn) => {
     }, 1500)
   })
 })</code></pre>
-              <div class="flex justify-end mt-2">
+              <div class="copy-actions">
                 <button class="btn btn-neutral" data-copy-btn>copy</button>
               </div>
             </div>

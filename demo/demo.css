@@ -1,0 +1,43 @@
+/* Demo page styles — not part of the distributed library */
+
+body {
+  padding: 2rem;
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.demo-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 4);
+}
+
+.demo-input-row > * {
+  flex: 1 1 10rem;
+}
+
+.demo-input-row + .demo-input-row {
+  margin-top: calc(var(--spacing) * 4);
+}
+
+.demo-panels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.copy-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+#card-demo {
+  max-width: 20rem;
+}
